@@ -83,6 +83,8 @@ Every major challenge encountered during development — solved in the working p
 
 ## Live Demo vs Full Pipeline
 
+<img width="2568" height="1036" alt="pipeline_results" src="https://github.com/user-attachments/assets/252f9464-f5a5-4910-835d-a7501adf6df1" />
+
 **Live demo** (Hugging Face Spaces, CPU, always available):
 - Shows real outputs from the Apple FY2023 10-K pipeline run
 - Correct extracted financials: $383B revenue, $97B net income, $6.13 EPS
@@ -137,6 +139,7 @@ For full GPU inference, run `FinSight_Development.ipynb` on Kaggle:
 ## Visual Results
 The final application features a clean, professional interface. It provides a visual extraction and summary of the input financial document.
 
+<img width="1167" height="582" alt="Screenshot 2026-03-20 at 10 52 41 PM" src="https://github.com/user-attachments/assets/fbe9e838-3ed6-4798-92af-598599c846bc" />
 
 ---
 
