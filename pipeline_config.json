@@ -1,0 +1,15 @@
+{
+  "colpali_model_id": "vidore/colpali-v1.2",
+  "qwen_model_id": "Qwen/Qwen2-VL-7B-Instruct",
+  "colpali_device": "cuda:1",
+  "qwen_max_memory": {
+    "0": "7GiB",
+    "1": "7GiB"
+  },
+  "pdf_dpi": 150,
+  "image_max_dim": 512,
+  "top_k_pages": 3,
+  "max_new_tokens_qa": 512,
+  "max_new_tokens_extract": 800,
+  "max_new_tokens_risk": 1000
+}
