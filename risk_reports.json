@@ -1,0 +1,296 @@
+[
+  {
+    "risk_level": "MEDIUM",
+    "risk_score": 50,
+    "flags": [
+      {
+        "category": "LIQUIDITY",
+        "severity": "MEDIUM",
+        "description": "Cash and cash equivalents are not provided, which is a critical financial field.",
+        "recommendation": "Investigate cash and cash equivalents to assess liquidity."
+      },
+      {
+        "category": "MARGINS",
+        "severity": "MEDIUM",
+        "description": "Operating margin is not provided, which is a critical financial field.",
+        "recommendation": "Investigate operating margin to assess profitability."
+      },
+      {
+        "category": "GROWTH",
+        "severity": "MEDIUM",
+        "description": "Revenue is declining from $394,328 million in 2022 to $383,285 million in 2023.",
+        "recommendation": "Investigate the reasons for revenue decline and assess the impact on the company's growth."
+      },
+      {
+        "category": "DEBT",
+        "severity": "LOW",
+        "description": "Debt-to-equity ratio is not provided, which is a critical financial field.",
+        "recommendation": "Investigate debt-to-equity ratio to assess financial leverage."
+      },
+      {
+        "category": "CASH_FLOW",
+        "severity": "LOW",
+        "description": "Free cash flow is not provided, which is a critical financial field.",
+        "recommendation": "Investigate free cash flow to assess the company's ability to generate cash."
+      },
+      {
+        "category": "ANOMALY",
+        "severity": "LOW",
+        "description": "No unusual items, restatements, or one-time charges are mentioned.",
+        "recommendation": "No specific anomalies found."
+      },
+      {
+        "category": "MISSING_DATA",
+        "severity": "HIGH",
+        "description": "Critical financial fields such as cash, total debt, operating margin, and free cash flow are absent.",
+        "recommendation": "Investigate these critical financial fields to assess the company's financial health."
+      },
+      {
+        "category": "INCONSISTENCY",
+        "severity": "LOW",
+        "description": "No inconsistencies found within the page.",
+        "recommendation": "No specific inconsistencies found."
+      }
+    ],
+    "positive_signals": [
+      "No specific positive signals found"
+    ],
+    "analyst_summary": "The financial document page shows a decline in revenue and critical financial fields such as cash, total debt, operating margin, and free cash flow are absent. This indicates a need for further investigation into the company's financial health and growth.",
+    "page_number": 42
+  },
+  {
+    "risk_level": "MEDIUM",
+    "risk_score": 50,
+    "flags": [
+      {
+        "category": "LIQUIDITY",
+        "severity": "MEDIUM",
+        "description": "The cash and cash equivalents are not provided, which is a critical financial field.",
+        "recommendation": "Investigate the cash and cash equivalents to assess liquidity."
+      },
+      {
+        "category": "MARGINS",
+        "severity": "MEDIUM",
+        "description": "The operating margin is below the industry norms for tech companies.",
+        "recommendation": "Analyze the reasons for the lower operating margin and consider the impact on future profitability."
+      },
+      {
+        "category": "GROWTH",
+        "severity": "MEDIUM",
+        "description": "Revenue is growing slower than expenses, which could indicate a potential decline in profitability.",
+        "recommendation": "Investigate the reasons for the slower revenue growth and consider the impact on future growth."
+      },
+      {
+        "category": "ANOMALY",
+        "severity": "LOW",
+        "description": "There are no unusual items, restatements, or one-time charges mentioned.",
+        "recommendation": "No specific anomalies found."
+      }
+    ],
+    "positive_signals": [
+      "Revenue is growing, although slower than expenses"
+    ],
+    "analyst_summary": "The financial document shows a growing revenue, but slower than expenses, indicating potential challenges in profitability. Critical financial fields like cash and cash equivalents are absent, which could impact liquidity analysis.",
+    "page_number": 51
+  },
+  {
+    "risk_level": "MEDIUM",
+    "risk_score": 50,
+    "flags": [
+      {
+        "category": "LIQUIDITY",
+        "severity": "MEDIUM",
+        "description": "Cash and cash equivalents are not provided, which is a critical financial field.",
+        "recommendation": "Investigate the cash and cash equivalents balance to assess liquidity."
+      },
+      {
+        "category": "ANOMALY",
+        "severity": "LOW",
+        "description": "There are no unusual items, restatements, or one-time charges mentioned.",
+        "recommendation": "No specific anomalies found."
+      },
+      {
+        "category": "MISSING_DATA",
+        "severity": "MEDIUM",
+        "description": "Critical financial fields such as total debt and cash are absent.",
+        "recommendation": "Provide the total debt and cash balance to assess financial health."
+      }
+    ],
+    "positive_signals": [
+      "No critical financial fields are absent that should be present"
+    ],
+    "analyst_summary": "The financial document provides a consolidated statement of shareholders' equity, but critical financial fields such as total debt and cash are absent. There are no unusual items or one-time charges mentioned, but the absence of these fields and the lack of cash and cash equivalents balance indicate potential liquidity concerns.",
+    "page_number": 56
+  },
+  {
+    "risk_level": "MEDIUM",
+    "risk_score": 50,
+    "flags": [
+      {
+        "category": "LIQUIDITY",
+        "severity": "MEDIUM",
+        "description": "Cash is declining while debt is increasing, indicating potential liquidity concerns.",
+        "recommendation": "Monitor cash flow and debt levels to ensure sufficient liquidity."
+      },
+      {
+        "category": "CASH_FLOW",
+        "severity": "MEDIUM",
+        "description": "Free cash flow is negative, which could indicate a strain on the company's ability to generate cash from operations.",
+        "recommendation": "Investigate the reasons for the negative free cash flow and consider strategies to improve it."
+      }
+    ],
+    "positive_signals": [
+      "No unusual items, restatements, or one-time charges were identified in the document."
+    ],
+    "analyst_summary": "The financial document shows a decline in cash while debt is increasing, indicating potential liquidity concerns. Additionally, free cash flow is negative, which could strain the company's ability to generate cash from operations. Further analysis is recommended to address these issues.",
+    "page_number": 58
+  },
+  {
+    "risk_level": "LOW",
+    "risk_score": 20,
+    "flags": [
+      {
+        "category": "LIQUIDITY",
+        "severity": "LOW",
+        "description": "No significant decline in cash or increase in debt observed.",
+        "recommendation": "Monitor cash flow and debt-to-equity ratio for future periods."
+      },
+      {
+        "category": "MARGINS",
+        "severity": "LOW",
+        "description": "Operating/net margins are not provided, but can be compared against industry norms.",
+        "recommendation": "Review industry benchmarks for operating/net margins."
+      },
+      {
+        "category": "GROWTH",
+        "severity": "LOW",
+        "description": "Revenue is growing, but growth rate should be compared against industry growth.",
+        "recommendation": "Analyze revenue growth rate against industry trends."
+      },
+      {
+        "category": "DEBT",
+        "severity": "LOW",
+        "description": "Debt-to-equity ratio is not provided, but can be calculated.",
+        "recommendation": "Calculate and monitor debt-to-equity ratio."
+      },
+      {
+        "category": "CASH_FLOW",
+        "severity": "LOW",
+        "description": "Free cash flow is not provided, but can be calculated.",
+        "recommendation": "Calculate and monitor free cash flow."
+      },
+      {
+        "category": "ANOMALY",
+        "severity": "LOW",
+        "description": "No unusual items, restatements, or one-time charges identified.",
+        "recommendation": "No specific anomalies found."
+      },
+      {
+        "category": "MISSING_DATA",
+        "severity": "LOW",
+        "description": "No critical financial fields are absent.",
+        "recommendation": "All necessary financial fields are present."
+      },
+      {
+        "category": "INCONSISTENCY",
+        "severity": "LOW",
+        "description": "No inconsistencies found within the page.",
+        "recommendation": "No inconsistencies identified."
+      }
+    ],
+    "positive_signals": [
+      "Revenue is growing, indicating potential for future earnings growth."
+    ],
+    "analyst_summary": "The financial document shows a growing revenue trend, but lacks detailed margins, debt-to-equity ratio, and cash flow data. Further analysis of these metrics is recommended to assess the company's financial health.",
+    "page_number": 63
+  },
+  {
+    "risk_level": "MEDIUM",
+    "risk_score": 50,
+    "flags": [
+      {
+        "category": "LIQUIDITY",
+        "severity": "MEDIUM",
+        "description": "Cash is declining while debt is increasing, which could indicate a liquidity risk.",
+        "recommendation": "Monitor cash flow and consider increasing cash reserves or reducing debt."
+      },
+      {
+        "category": "ANOMALY",
+        "severity": "LOW",
+        "description": "There are no unusual items, restatements, or one-time charges mentioned.",
+        "recommendation": "No specific anomalies found."
+      },
+      {
+        "category": "MISSING_DATA",
+        "severity": "LOW",
+        "description": "Critical financial fields such as revenue, net income, and EPS are present.",
+        "recommendation": "No missing data found."
+      }
+    ],
+    "positive_signals": [
+      "The company has lease arrangements for certain equipment and facilities, including corporate, data center, manufacturing, and retail space.",
+      "The adjusted recovery amount plus interest is funded into escrow, where it will remain restricted from general use pending the conclusion of all legal proceedings."
+    ],
+    "analyst_summary": "The financial document shows a medium level of risk due to declining cash and increasing debt. However, there are no significant anomalies or missing data. Further analysis of cash flow and debt-to-equity ratio is recommended.",
+    "page_number": 76
+  },
+  {
+    "risk_level": "MEDIUM",
+    "risk_score": 50,
+    "flags": [
+      {
+        "category": "LIQUIDITY",
+        "severity": "MEDIUM",
+        "description": "The document does not provide information on cash and debt levels, making it difficult to assess liquidity risk.",
+        "recommendation": "Investigate cash and debt levels to assess liquidity risk."
+      },
+      {
+        "category": "MARGINS",
+        "severity": "MEDIUM",
+        "description": "Operating margins are not provided, making it difficult to assess margin performance.",
+        "recommendation": "Obtain operating margins to assess margin performance."
+      },
+      {
+        "category": "GROWTH",
+        "severity": "MEDIUM",
+        "description": "Revenue growth is not provided, making it difficult to assess growth performance.",
+        "recommendation": "Obtain revenue growth rates to assess growth performance."
+      },
+      {
+        "category": "DEBT",
+        "severity": "LOW",
+        "description": "No information on debt-to-equity ratio or interest coverage is provided.",
+        "recommendation": "Obtain debt-to-equity ratio and interest coverage to assess debt risk."
+      },
+      {
+        "category": "CASH_FLOW",
+        "severity": "LOW",
+        "description": "No information on free cash flow is provided.",
+        "recommendation": "Obtain free cash flow to assess cash flow risk."
+      },
+      {
+        "category": "ANOMALY",
+        "severity": "LOW",
+        "description": "No unusual items, restatements, or one-time charges are mentioned.",
+        "recommendation": "No specific anomalies found."
+      },
+      {
+        "category": "MISSING_DATA",
+        "severity": "LOW",
+        "description": "Critical financial fields such as cash, debt, and operating margin are absent.",
+        "recommendation": "Obtain these financial fields to complete the analysis."
+      },
+      {
+        "category": "INCONSISTENCY",
+        "severity": "LOW",
+        "description": "No inconsistencies found within the page.",
+        "recommendation": "No specific inconsistencies found."
+      }
+    ],
+    "positive_signals": [
+      "No critical financial fields are absent that should be present"
+    ],
+    "analyst_summary": "The document provides limited financial information, making it difficult to assess the company's financial health comprehensively. Further analysis of liquidity, margins, growth, debt, cash flow, and other financial metrics is recommended.",
+    "page_number": 86
+  }
+]
