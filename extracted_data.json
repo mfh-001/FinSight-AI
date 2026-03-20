@@ -1,0 +1,198 @@
+[
+  {
+    "document_type": "10K",
+    "company_name": "Apple Inc.",
+    "period": "September 30, 2023",
+    "financials": {
+      "revenue": "$383,285 million",
+      "net_income": "$97,000 million",
+      "eps": "$6.13",
+      "total_debt": null,
+      "cash": null,
+      "operating_margin": null,
+      "free_cash_flow": null
+    },
+    "key_metrics": [],
+    "entities_mentioned": [
+      "Apple Inc.",
+      "fiscal year end date"
+    ],
+    "page_summary": "This page contains the consolidated financial performance of Apple Inc. for the fiscal year ending September 30, 2023.",
+    "page_number": 42,
+    "retrieval_score": 15.52,
+    "query_category": "segment_data"
+  },
+  {
+    "document_type": "10K",
+    "company_name": "Apple Inc.",
+    "period": "September 30, 2023",
+    "financials": {
+      "revenue": 383285,
+      "gross_profit": 169148,
+      "operating_income": 114301,
+      "net_income": 96995,
+      "eps": 6.13,
+      "total_debt": null,
+      "cash": null,
+      "operating_margin": null,
+      "free_cash_flow": null
+    },
+    "key_metrics": [
+      "Total net sales",
+      "Net income",
+      "EPS diluted"
+    ],
+    "entities_mentioned": [
+      "Apple Inc.",
+      "fiscal year end date"
+    ],
+    "page_summary": "Consolidated Statements of Operations for Apple Inc. for the fiscal year ending September 30, 2023.",
+    "page_number": 51,
+    "retrieval_score": 10.72,
+    "query_category": "revenue_income"
+  },
+  {
+    "document_type": "10K",
+    "company_name": "Apple Inc.",
+    "period": "September 30, 2023",
+    "financials": {
+      "revenue": "383B",
+      "net_income": "97B",
+      "eps": "6.13",
+      "total_debt": null,
+      "cash": null,
+      "operating_margin": null,
+      "free_cash_flow": null
+    },
+    "key_metrics": [
+      "Total shareholders' equity, beginning balances",
+      "Common stock and additional paid-in capital",
+      "Retained earnings/(Accumulated deficit)",
+      "Accumulated other comprehensive income/(loss)",
+      "Total shareholders' equity, ending balances",
+      "Dividends and dividend equivalents declared per share or RSU"
+    ],
+    "entities_mentioned": [
+      "Apple Inc.",
+      "September 30, 2023",
+      "September 24, 2022",
+      "September 25, 2021"
+    ],
+    "page_summary": "Consolidated Statements of Shareholders' Equity for Apple Inc. for the fiscal year ending September 30, 2023.",
+    "page_number": 56,
+    "retrieval_score": 8.52,
+    "query_category": "balance_sheet"
+  },
+  {
+    "document_type": "10K",
+    "company_name": "Apple",
+    "period": "September 30, 2023",
+    "financials": {
+      "revenue": null,
+      "gross_profit": null,
+      "operating_income": null,
+      "net_income": null,
+      "eps": null,
+      "total_debt": null,
+      "cash": null,
+      "operating_margin": null,
+      "free_cash_flow": null
+    },
+    "key_metrics": [
+      "Total net sales",
+      "Net income",
+      "EPS diluted"
+    ],
+    "entities_mentioned": [
+      "Apple",
+      "September 30, 2023"
+    ],
+    "page_summary": "This page contains the Consolidated Statements of Operations for Apple Inc. for the fiscal year ending September 30, 2023.",
+    "page_number": 58,
+    "retrieval_score": 9.31,
+    "query_category": "balance_sheet"
+  },
+  {
+    "document_type": "10K",
+    "company_name": "Apple Inc.",
+    "period": "September 30, 2023",
+    "financials": {
+      "revenue": 383285,
+      "net_income": 96995,
+      "eps": 6.13
+    },
+    "key_metrics": [],
+    "entities_mentioned": [
+      "Apple Inc.",
+      "September 30, 2023"
+    ],
+    "page_summary": "Consolidated financial statements for Apple Inc. for the fiscal year ending September 30, 2023, including revenue and net income.",
+    "page_number": 63,
+    "retrieval_score": 10.9,
+    "query_category": "revenue_income"
+  },
+  {
+    "document_type": "10K",
+    "company_name": "Apple Inc.",
+    "period": "September 30, 2023",
+    "financials": {
+      "revenue": "383B",
+      "net_income": "97B",
+      "eps": "6.13",
+      "total_debt": "null",
+      "cash": "null",
+      "operating_margin": "null",
+      "free_cash_flow": "null"
+    },
+    "key_metrics": [
+      "Operating leases",
+      "Other non-current assets",
+      "Property, plant and equipment, net",
+      "Operating leases",
+      "Other current liabilities",
+      "Other non-current liabilities",
+      "Operating leases",
+      "Other current liabilities",
+      "Other non-current liabilities"
+    ],
+    "entities_mentioned": [
+      "European Commission",
+      "State Aid Decision",
+      "June 2003 through December 2014",
+      "July 15, 2020",
+      "September 25, 2020",
+      "May 23, 2023",
+      "ECJ",
+      "General Court",
+      "Irish Minister for Finance",
+      "Cash, Cash Equivalents and Marketable Securities"
+    ],
+    "page_summary": "Page contains financial information related to leases and state aid decision.",
+    "page_number": 76,
+    "retrieval_score": 8.49,
+    "query_category": "cash_flow"
+  },
+  {
+    "document_type": "10K",
+    "company_name": "Apple Inc.",
+    "period": "September 30, 2023",
+    "financials": {
+      "revenue": "$383 billion",
+      "net_income": "$97 billion",
+      "eps": "$6.13",
+      "total_debt": null,
+      "cash": null,
+      "operating_margin": null,
+      "free_cash_flow": null
+    },
+    "key_metrics": [],
+    "entities_mentioned": [
+      "Apple Inc.",
+      "fiscal year end date"
+    ],
+    "page_summary": "A page from Apple Inc.'s 10-K annual report containing segment information and geographic data for the fiscal year ending September 30, 2023.",
+    "page_number": 86,
+    "retrieval_score": 15.54,
+    "query_category": "segment_data"
+  }
+]
