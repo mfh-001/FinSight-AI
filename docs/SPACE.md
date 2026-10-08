@@ -26,3 +26,9 @@ The app looks for `samples/` and `legacy/recorded_run/` in the working directory
 
 For a GPU answer path (ZeroGPU or a paid GPU), set these in the Space settings, and add `FINSIGHT_BACKEND=transformers`,
 `FINSIGHT_LLM_MODEL=Qwen/Qwen2.5-VL-3B-Instruct` and the `.[gpu]` extra to `requirements.txt`. I could not test ZeroGPU here.
+
+## Notes
+
+- The Space runs on the free CPU hardware. It reads born-digital PDFs and shows the best matching lines with page numbers. It says so on the page, and it cannot read scanned pages.
+- The old Streamlit replay stays only on the `legacy-streamlit` branch of the Space. It is not the default page.
+- The old `Dockerfile` and `src/streamlit_app.py` (a leftover Streamlit template) are deleted by the `git rm -rq .` step.

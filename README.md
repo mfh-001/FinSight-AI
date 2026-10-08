@@ -4,7 +4,7 @@ Ask questions about financial PDFs and get answers with page citations. Runs loc
 
 ![demo](docs/media/demo.gif)
 
-*The GIF is a drawn terminal made from real `finsight ask` output on the CPU-only path (no model). See "Results" for how that path scores.*
+*A drawn terminal built from real `finsight ask` output on the CPU-only path (no model), not a screen recording. Retrieval-only answers are a baseline, see Results for how they score. A recording of the web app will replace it.*
 
 [![CI](https://github.com/mfh-001/FinSight-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/mfh-001/FinSight-AI/actions/workflows/ci.yml)
 [![HF Space](https://img.shields.io/badge/%F0%9F%A4%97-Space-yellow)](https://huggingface.co/spaces/MFH-001/FinSight-AI)
