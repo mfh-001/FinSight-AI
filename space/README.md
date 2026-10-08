@@ -1,6 +1,5 @@
 ---
 title: FinSight AI
-emoji: 📄
 colorFrom: green
 colorTo: gray
 sdk: gradio
