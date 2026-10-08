@@ -1,4 +1,5 @@
 """Model backends. All of them take a prompt and optional page images and return text."""
+
 from __future__ import annotations
 
 import base64
@@ -141,7 +142,7 @@ class TransformersBackend:
         inputs = {k: v.to(self.model.device) for k, v in inputs.items() if hasattr(v, "to")}
         with torch.no_grad():
             out = self.model.generate(**inputs, max_new_tokens=max_tokens, do_sample=False)
-        new = out[0][inputs["input_ids"].shape[1]:]
+        new = out[0][inputs["input_ids"].shape[1] :]
         tok = getattr(self.processor, "tokenizer", self.processor)
         return tok.decode(new, skip_special_tokens=True).strip()
 

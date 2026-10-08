@@ -1,4 +1,5 @@
 """Turn the many ways a number is written into one float plus an optional unit."""
+
 from __future__ import annotations
 
 import re

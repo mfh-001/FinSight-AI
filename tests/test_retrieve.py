@@ -4,11 +4,14 @@ from finsight.retrieve import BM25, Hit, Retriever, rrf, tokenize
 
 def docs():
     return [
-        Document("a.pdf", [
-            Page("a.pdf", 1, "cover page of the annual report"),
-            Page("a.pdf", 2, "total net sales 383,285 operating income 114,301"),
-            Page("a.pdf", 3, "risk factors supply chain disruption"),
-        ]),
+        Document(
+            "a.pdf",
+            [
+                Page("a.pdf", 1, "cover page of the annual report"),
+                Page("a.pdf", 2, "total net sales 383,285 operating income 114,301"),
+                Page("a.pdf", 3, "risk factors supply chain disruption"),
+            ],
+        ),
         Document("b.pdf", [Page("b.pdf", 1, "invoice number 42 total due 900")]),
     ]
 

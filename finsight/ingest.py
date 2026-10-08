@@ -1,4 +1,5 @@
 """Read PDFs. Born-digital pages give text and tables directly, no OCR and no images."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field

@@ -6,12 +6,17 @@ from finsight.retrieve import Retriever
 
 
 def retriever():
-    return Retriever([
-        Document("apple.pdf", [
-            Page("apple.pdf", 1, "cover"),
-            Page("apple.pdf", 2, "Total net sales 383,285 394,328\nNet income 96,995"),
-        ])
-    ])
+    return Retriever(
+        [
+            Document(
+                "apple.pdf",
+                [
+                    Page("apple.pdf", 1, "cover"),
+                    Page("apple.pdf", 2, "Total net sales 383,285 394,328\nNet income 96,995"),
+                ],
+            )
+        ]
+    )
 
 
 def test_parse_citations():

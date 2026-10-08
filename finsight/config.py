@@ -1,4 +1,5 @@
 """Settings. Everything can be set by FINSIGHT_* env vars or a yaml file."""
+
 from __future__ import annotations
 
 import os

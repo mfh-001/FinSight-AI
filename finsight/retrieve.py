@@ -1,4 +1,5 @@
 """Page retrieval: BM25 over page text, optional visual retriever, fused with RRF."""
+
 from __future__ import annotations
 
 import math

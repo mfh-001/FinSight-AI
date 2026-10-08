@@ -1,4 +1,5 @@
 """Question answering with page citations. Cites as [file.pdf p.12]."""
+
 from __future__ import annotations
 
 import re

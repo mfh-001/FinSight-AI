@@ -1,4 +1,5 @@
 """Plain-file storage. One folder per document under FINSIGHT_HOME/docs."""
+
 from __future__ import annotations
 
 import hashlib
@@ -26,14 +27,23 @@ class Store:
         src = folder / "source.pdf"
         src.write_bytes(data)
         doc = ingest_pdf(src, name=name, max_pages=max_pages)
-        (folder / "pages.json").write_text(json.dumps({
-            "name": name,
-            "added": time.time(),
-            "pages": [
-                {"number": p.number, "text": p.text, "tables": p.tables, "scanned": p.scanned}
-                for p in doc.pages
-            ],
-        }))
+        (folder / "pages.json").write_text(
+            json.dumps(
+                {
+                    "name": name,
+                    "added": time.time(),
+                    "pages": [
+                        {
+                            "number": p.number,
+                            "text": p.text,
+                            "tables": p.tables,
+                            "scanned": p.scanned,
+                        }
+                        for p in doc.pages
+                    ],
+                }
+            )
+        )
         return doc
 
     def _folders(self):
