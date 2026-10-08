@@ -81,3 +81,18 @@ def test_summary_reports_text_pages_separately():
     s = summarize([ok, scanned])
     assert s["scanned_questions"] == 1
     assert s["numeric_tolerance_pct"] == 50.0 and s["numeric_tolerance_pct_text_pages"] == 100.0
+
+
+def test_run_eval_passes_page_paths_to_a_vision_backend(tmp_path, sample_pdf, monkeypatch):
+    from finsight import evaluate
+    from finsight.config import Config
+    from finsight.llm import MockBackend
+
+    seen = MockBackend("383 [acme-report.pdf p.2]")
+    monkeypatch.setattr(evaluate, "make_backend", lambda cfg: seen)
+    qs = [{"id": "x", "doc": "acme-report.pdf", "question": "total net sales", "kind": "number",
+           "value": 1200, "unit": "units", "pages": [2]}]  # fmt: skip
+    cfg = Config(backend="mock", use_vision=True)
+    out = evaluate.run_eval(cfg, qs, sample_pdf.parent, label="t")
+    assert seen.calls[0][2] >= 1  # page images were sent
+    assert out["summary"]["label"] == "t"

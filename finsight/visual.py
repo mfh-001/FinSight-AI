@@ -37,7 +37,8 @@ class ColPaliRetriever:
             if torch.backends.mps.is_available()
             else "cpu"
         )  # noqa: E501
-        dtype = torch.bfloat16 if device == "cuda" else torch.float32
+        # T4 cards have no fast bfloat16, float16 works on every cuda card
+        dtype = torch.float16 if device == "cuda" else torch.float32
         self._model = ColPali.from_pretrained(
             self.model_id, torch_dtype=dtype, device_map=device
         ).eval()  # noqa: E501

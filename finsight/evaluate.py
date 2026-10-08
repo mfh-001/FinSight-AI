@@ -133,12 +133,18 @@ def run_eval(cfg: Config, questions: list[dict], docs_dir: str | Path, label: st
         for n in names:
             store.add(Path(docs_dir) / n, name=n)
         docs = store.load_all()
-        retriever = Retriever(docs)
+        paths = {d.name: str(store.pdf_path(d.name)) for d in docs}
+        visual = None
+        if cfg.visual_retriever:
+            from .visual import ColPaliRetriever
+
+            visual = ColPaliRetriever(cfg, {k: Path(v) for k, v in paths.items()})
+        retriever = Retriever(docs, visual)
         backend = make_backend(cfg)
         rows = []
         t_start = time.perf_counter()
         for q in questions:
-            ans = answer_question(q["question"], retriever, backend, cfg)
+            ans = answer_question(q["question"], retriever, backend, cfg, paths)
             rows.append({**score(q, ans), "answer": ans.text[:300]})
         summary = summarize(rows)
     summary.update(
@@ -171,7 +177,7 @@ def run(args) -> int:
         cfg.backend = args.backend
     if args.model:
         cfg.llm_model = args.model
-    out = run_eval(cfg, load_questions(args.set), args.docs)
+    out = run_eval(cfg, load_questions(args.set), args.docs, getattr(args, "label", ""))
     s = out["summary"]
     print(json.dumps(s, indent=2))
     if args.out:

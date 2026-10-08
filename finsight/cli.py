@@ -158,7 +158,8 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("eval", help="run the question set and print accuracy")
     p.add_argument("--set", default="eval/heldout/questions.jsonl")
     p.add_argument("--docs", default="eval/heldout/docs")
-    p.add_argument("--out", help="write the results table as markdown")
+    p.add_argument("--out", help="write the full results as json")
+    p.add_argument("--label", default="", help="name for this config in the results table")
     p.set_defaults(fn=cmd_eval)
 
     p = sub.add_parser("serve", help="start the web app")
