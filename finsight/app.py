@@ -38,14 +38,20 @@ RECORDED = _find("legacy/recorded_run")
 
 
 class Session:
-    """One visitor. Files live in a temp folder that is removed when the session ends."""
+    """One visitor. Files live in a temp folder that is removed when the session ends.
+
+    With FINSIGHT_PERSIST=1 the app uses the shared FINSIGHT_HOME instead and keeps the files,
+    which suits a firm server where everyone sees the same document library.
+    """
 
     def __init__(self, cfg: Config):
-        self.tmp = tempfile.mkdtemp(prefix="finsight-")
+        self.persist = os.environ.get("FINSIGHT_PERSIST", "") in ("1", "true", "yes")
+        self.tmp = str(cfg.home_path) if self.persist else tempfile.mkdtemp(prefix="finsight-")
         self.engine = Engine(replace(cfg, home=self.tmp))
 
     def close(self) -> None:
-        shutil.rmtree(self.tmp, ignore_errors=True)
+        if not self.persist:
+            shutil.rmtree(self.tmp, ignore_errors=True)
 
 
 def _new_session(cfg: Config) -> Session:
