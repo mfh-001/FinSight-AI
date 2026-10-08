@@ -67,12 +67,15 @@ def build_app(cfg: Config | None = None) -> gr.Blocks:
         if not question.strip():
             raise gr.Error("Type a question.")
         ans = state.engine.ask(question, None if doc_choice == "All" else doc_choice)
-        note = {
-            "retrieval-only": "No model is configured here, so this shows the best matching lines "
-            "from the cited page. Run locally with a model for full answers.",
-            "model": f"Answered by {state.engine.backend.name}.",
-            "empty": "",
-        }[ans.mode]
+        if ans.mode == "retrieval-only":
+            note = (
+                "No model is configured here, so this shows the best matching lines from the "
+                "cited page. Run locally with a model for full answers."
+            )
+        elif ans.mode == "model":
+            note = f"Answered by {state.engine.backend.name}."
+        else:
+            note = ""
         text = f"### {ans.text}\n\n_{note}_" if ans.mode != "model" else f"{ans.text}\n\n_{note}_"
         thumbs = []
         for d, p in ans.citations:

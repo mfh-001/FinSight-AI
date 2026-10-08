@@ -72,16 +72,25 @@ def _coverage(question: str, page_text: str, retriever: Retriever) -> float:
     return sum(retriever.idf(t) for t in q & have) / sum(retriever.idf(t) for t in q)
 
 
+def _sentences(text: str) -> list[str]:
+    out = []
+    for line in text.splitlines():
+        out += [s.strip()[:300] for s in re.split(r"(?<=[.;])\s+(?=[A-Z])", line) if s.strip()]
+    return out
+
+
 def _best_lines(question: str, retriever: Retriever, hits: list[Hit], n: int = 3):
     """Best matching lines over the top pages. Returns (page hit, lines)."""
     q = set(tokenize(question))
     best: tuple[float, Hit] | None = None
     per_page: dict[tuple[str, int], list[tuple[float, str]]] = {}
     for h in hits:
-        for line in retriever.page(h.doc, h.page).content.splitlines():
-            overlap = q & set(tokenize(line))
+        for line in _sentences(retriever.page(h.doc, h.page).content):
+            toks = tokenize(line)
+            overlap = q & set(toks)
             if overlap:
-                sc = sum(retriever.idf(t) for t in overlap)
+                # long sentences match by chance, so damp the score by length
+                sc = sum(retriever.idf(t) for t in overlap) / (len(toks) ** 0.25)
                 per_page.setdefault(h.key, []).append((sc, line.strip()))
                 if best is None or sc > best[0]:
                     best = (sc, h)
@@ -111,7 +120,7 @@ def answer_question(
         ):
             return Answer(NOT_FOUND, False, [], hits, "retrieval-only", time.perf_counter() - t0)
         top, lines = _best_lines(question, retriever, hits)
-        text = "\n".join(lines) + f" [{top.doc} p.{top.page}]"
+        text = "\n".join(f"- {ln}" for ln in lines) + f"\n\n[{top.doc} p.{top.page}]"
         return Answer(text, True, [top.key], hits, "retrieval-only", time.perf_counter() - t0)
 
     images = None

@@ -3,109 +3,109 @@
     "questions": 49,
     "answerable": 42,
     "not_in_document": 7,
-    "exact_match_pct": 26.2,
-    "numeric_tolerance_pct": 38.1,
-    "citation_hit_pct": 40.5,
+    "exact_match_pct": 38.1,
+    "numeric_tolerance_pct": 47.6,
+    "citation_hit_pct": 52.4,
     "retrieval_hit_pct": 95.2,
     "not_found_correct_pct": 57.1,
     "median_seconds": 0.01,
     "label": "none",
     "backend": "none",
     "model": "",
-    "hardware": "Darwin arm64 (arm), no GPU",
+    "hardware": "Darwin arm64 (arm), Apple GPU (MPS) available",
     "date": "2026-10-08",
-    "total_seconds": 0.5
+    "total_seconds": 2.2
   },
   "rows": [
     {
       "id": "a01",
       "kind": "number",
       "found": true,
-      "seconds": 0.009419583017006516,
+      "seconds": 0.010728249908424914,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": true,
       "exact": false,
-      "answer": "The Company\u2019s total net sales were $383.3 billion and net income was $97.0 billion during 2023.\nThe Company\u2019s total net sales decreased 3% or $11.0 billion during 2023 compared to 2022. The weakness in foreign currencies relative to the U.S. dollar accounted for more than the entire year-over-year d"
+      "answer": "- The Company\u2019s total net sales decreased 3% or $11.0 billion during 2023 compared to 2022.\n- The Company\u2019s total net sales were $383.3 billion and net income was $97.0 billion during 2023.\n- The weakness in foreign currencies relative to the U.S. dollar accounted for more than the entire year-over-"
     },
     {
       "id": "a02",
       "kind": "number",
       "found": true,
-      "seconds": 0.009907874977216125,
+      "seconds": 0.010932708973996341,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "The Company\u2019s total net sales decreased 3% or $11.0 billion during 2023 compared to 2022. The weakness in foreign currencies relative to the U.S. dollar accounted for more than the entire year-over-year decrease in total net sales, which consisted primarily of lower net sales of Mac and iPhone, part"
+      "answer": "- The Company\u2019s total net sales decreased 3% or $11.0 billion during 2023 compared to 2022.\n- The Company\u2019s total net sales were $383.3 billion and net income was $97.0 billion during 2023.\n- The weakness in foreign currencies relative to the U.S. dollar accounted for more than the entire year-over-"
     },
     {
       "id": "a03",
       "kind": "number",
       "found": true,
-      "seconds": 0.007995749940164387,
+      "seconds": 0.008683250052854419,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": true,
       "exact": false,
-      "answer": "The Company\u2019s total net sales were $383.3 billion and net income was $97.0 billion during 2023.\nThe Company\u2019s total net sales decreased 3% or $11.0 billion during 2023 compared to 2022. The weakness in foreign currencies relative to the U.S. dollar accounted for more than the entire year-over-year d"
+      "answer": "- The Company\u2019s total net sales were $383.3 billion and net income was $97.0 billion during 2023.\n- Apple Inc. | 2023 Form 10-K | 20\n- Significant announcements during fiscal year 2023 included the following:\n\n[apple-10k-fy2023.pdf p.31]"
     },
     {
       "id": "a04",
       "kind": "number",
       "found": true,
-      "seconds": 0.009154582978226244,
+      "seconds": 0.00927741697523743,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": true,
       "exact": true,
-      "answer": "The following table shows the computation of basic and diluted earnings per share for 2023, 2022 and 2021 (net income in millions and shares in thousands):\nApproximately 24 million restricted stock units (\u201cRSUs\u201d) were excluded from the computation of diluted earnings per share for 2023 because their"
+      "answer": "- Diluted earnings per share | 6.13 | 6.11 | 5.61\n- The following table shows the computation of basic and diluted earnings per share for 2023, 2022 and 2021 (net income in millions and shares in thousands):\n- Approximately 24 million restricted stock units (\u201cRSUs\u201d) were excluded from the computatio"
     },
     {
       "id": "a05",
       "kind": "number",
       "found": true,
-      "seconds": 0.008030790952034295,
+      "seconds": 0.00916933303233236,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": false,
       "exact": false,
-      "answer": "A reconciliation of the Company\u2019s segment operating income to the Consolidated Statements of Operations for 2023, 2022 and 2021 is as follows (in millions):\nThe Company evaluates the performance of its reportable segments based on net sales and operating income. Net sales for geographic segments are"
+      "answer": "- A reconciliation of the Company\u2019s segment operating income to the Consolidated Statements of Operations for 2023, 2022 and 2021 is as follows (in millions):\n- Operating income | 60,508 | 62,683 | 53,382\n- Operating income | 36,098 | 35,233 | 32,505\n\n[apple-10k-fy2023.pdf p.60]"
     },
     {
       "id": "a06",
       "kind": "number",
       "found": true,
-      "seconds": 0.007963041076436639,
+      "seconds": 0.008158750017173588,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": false,
       "exact": false,
-      "answer": "Products and Services gross margin and gross margin percentage for 2023, 2022 and 2021 were as follows (dollars in millions):\n2023 2022 2021 Gross margin:\nProducts gross margin decreased during 2023 compared to 2022 due to the weakness in foreign currencies relative to the U.S. dollar and lower Prod"
+      "answer": "- Products and Services gross margin and gross margin percentage for 2023, 2022 and 2021 were as follows (dollars in millions):\n- Gross Margin\n- 2023 2022 2021 Gross margin:\n\n[apple-10k-fy2023.pdf p.34]"
     },
     {
       "id": "a07",
       "kind": "number",
       "found": true,
-      "seconds": 0.005923166987486184,
+      "seconds": 0.006019124994054437,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "Capitalized research and development | 6,294 | 1,267\nThe Company is subject to taxation and files income tax returns in the U.S. federal jurisdiction and many state and foreign jurisdictions. Tax years after 2017 for the U.S. federal jurisdiction, and after 2014 in certain major foreign jurisdiction"
+      "answer": "- Research and Development\n- Apple Inc. | 2023 Form 10-K | 23\n- 2023 2022 2021 Gross margin:\n\n[apple-10k-fy2023.pdf p.34]"
     },
     {
       "id": "a08",
       "kind": "number",
       "found": false,
-      "seconds": 0.001659959089010954,
+      "seconds": 0.0016511660069227219,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
@@ -117,31 +117,31 @@
       "id": "a09",
       "kind": "number",
       "found": true,
-      "seconds": 0.009401624905876815,
+      "seconds": 0.009669292019680142,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "The U.S. and China were the only countries that accounted for more than 10% of the Company\u2019s net sales in 2023, 2022 and 2021. Net sales for 2023, 2022 and 2021 and long-lived assets as of September 30, 2023 and September 24, 2022 were as follows (in millions):\nTotal long-lived assets | $ 43,715 | 4"
+      "answer": "- As of September 30, 2023 and September 24, 2022, the significant components of the Company\u2019s deferred tax assets and liabilities were (in millions):\n- As of September 30, 2023, the total amount of gross unrecognized tax benefits was $19.5 billion, of which $9.5 billion, if recognized, would impact"
     },
     {
       "id": "a10",
       "kind": "number",
       "found": true,
-      "seconds": 0.010347625007852912,
+      "seconds": 0.011808999930508435,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "The weighted-average remaining lease term related to the Company\u2019s lease liabilities as of September 30, 2023 and September 24, 2022 was 10.6 years and 10.1 years, respectively. The discount rate related to the Company\u2019s lease liabilities as of September 30, 2023 and September 24, 2022 was 3.0% and "
+      "answer": "- The discount rate related to the Company\u2019s lease liabilities as of September 30, 2023 and September 24, 2022 was 3.0% and 2.3%, respectively.\n- The weighted-average remaining lease term related to the Company\u2019s lease liabilities as of September 30, 2023 and September 24, 2022 was 10.6 years and 10"
     },
     {
       "id": "a11",
       "kind": "number",
       "found": false,
-      "seconds": 0.0020541250705718994,
+      "seconds": 0.0018008750630542636,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
@@ -153,139 +153,139 @@
       "id": "a12",
       "kind": "number",
       "found": true,
-      "seconds": 0.00842900003772229,
+      "seconds": 0.01038062502630055,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": true,
       "exact": true,
-      "answer": "The Company believes it has a talented, motivated and dedicated team, and works to create an inclusive, safe and supportive environment for all of its team members. As of September 30, 2023, the Company had approximately 161,000 full-time equivalent employees.\nThe Company believes that compensation "
+      "answer": "- As of September 30, 2023, the Company had approximately 161,000 full-time equivalent employees.\n- The Company believes that compensation should be competitive and equitable, and should enable employees to share in the Company\u2019s success.\n- In support of this, the Company offers a wide variety of be"
     },
     {
       "id": "a13",
       "kind": "number",
       "found": true,
-      "seconds": 0.01000337500590831,
+      "seconds": 0.012120249914005399,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": true,
       "exact": true,
-      "answer": "Greater China net sales decreased 2% or $1.6 billion during 2023 compared to 2022. The weakness in the renminbi relative to the U.S. dollar accounted for more than the entire year-over-year decrease in Greater China net sales, which consisted primarily of lower net sales of Mac and iPhone.\nGreater C"
+      "answer": "- Greater China net sales decreased 2% or $1.6 billion during 2023 compared to 2022.\n- Greater China\n- Greater China | 72,559 | (2) | 74,200 | 9 | 68,366\n\n[apple-10k-fy2023.pdf p.32]"
     },
     {
       "id": "a14",
       "kind": "number",
       "found": true,
-      "seconds": 0.010806459002196789,
+      "seconds": 0.012862290954217315,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": false,
       "exact": false,
-      "answer": "Americas net sales decreased 4% or $7.1 billion during 2023 compared to 2022 due to lower net sales of iPhone and Mac, partially offset by higher net sales of Services.\nThe following table shows net sales by reportable segment for 2023, 2022 and 2021 (dollars in millions):\n2023 Change 2022 Change 20"
+      "answer": "- Americas\n- 2023 Change 2022 Change 2021 Net sales by reportable segment:\n- Americas net sales decreased 4% or $7.1 billion during 2023 compared to 2022 due to lower net sales of iPhone and Mac, partially offset by higher net sales of Services.\n\n[apple-10k-fy2023.pdf p.32]"
     },
     {
       "id": "a15",
       "kind": "number",
       "found": true,
-      "seconds": 0.010097583988681436,
+      "seconds": 0.012482292018830776,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
-      "numeric": true,
-      "exact": true,
-      "answer": "Japan net sales decreased 7% or $1.7 billion during 2023 compared to 2022. The weakness in the yen relative to the U.S. dollar accounted for more than the entire year-over-year decrease in Japan net sales, which consisted primarily of lower net sales of iPhone, Wearables, Home and Accessories and Ma"
+      "numeric": false,
+      "exact": false,
+      "answer": "- Japan net sales decreased 7% or $1.7 billion during 2023 compared to 2022.\n- Japan\n- The weakness in the yen relative to the U.S. dollar accounted for more than the entire year-over-year decrease in Japan net sales, which consisted primarily of lower net sales of iPhone, Wearables, Home and Access"
     },
     {
       "id": "a16",
       "kind": "number",
       "found": true,
-      "seconds": 0.009778250008821487,
+      "seconds": 0.011676082969643176,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": true,
       "exact": true,
-      "answer": "15,552,752,000 shares of common stock were issued and outstanding as of October 20, 2023.\nThe aggregate market value of the voting and non-voting stock held by non-affiliates of the Registrant, as of March 31, 2023, the last business day of the Registrant\u2019s most recently completed second fiscal quar"
+      "answer": "- 15,552,752,000 shares of common stock were issued and outstanding as of October 20, 2023.\n- Solely for purposes of this disclosure, shares of common stock held by executive officers and directors of the Registrant as of such date have been excluded because such persons may be deemed to be affiliat"
     },
     {
       "id": "a17",
       "kind": "number",
       "found": true,
-      "seconds": 0.007089708000421524,
+      "seconds": 0.008490875014103949,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": true,
       "exact": true,
-      "answer": "The aggregate market value of the voting and non-voting stock held by non-affiliates of the Registrant, as of March 31, 2023, the last business day of the Registrant\u2019s most recently completed second fiscal quarter, was approximately $2,591,165,000,000. Solely for purposes of this disclosure, shares "
+      "answer": "- The aggregate market value of the voting and non-voting stock held by non-affiliates of the Registrant, as of March 31, 2023, the last business day of the Registrant\u2019s most recently completed second fiscal quarter, was approximately $2,591,165,000,000.\n- Solely for purposes of this disclosure, sha"
     },
     {
       "id": "a18",
       "kind": "number",
       "found": true,
-      "seconds": 0.012825707904994488,
+      "seconds": 0.014278999995440245,
       "mode": "retrieval-only",
       "retrieval_hit": true,
-      "citation_hit": false,
+      "citation_hit": true,
       "numeric": false,
       "exact": false,
-      "answer": "The Company\u2019s total net sales decreased 3% or $11.0 billion during 2023 compared to 2022. The weakness in foreign currencies relative to the U.S. dollar accounted for more than the entire year-over-year decrease in total net sales, which consisted primarily of lower net sales of Mac and iPhone, part"
+      "answer": "- Net sales disaggregated by significant products and services for 2023, 2022 and 2021 were as follows (in millions):\n- (2) Services net sales include amortization of the deferred value of services bundled in the sales price of certain products.\n- Total net sales | 383,285 | 394,328 | 365,817\n\n[appl"
     },
     {
       "id": "a19",
       "kind": "number",
       "found": true,
-      "seconds": 0.008039374952204525,
+      "seconds": 0.008795249974355102,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "Share repurchase activity during the three months ended September 30, 2023 was as follows (in millions, except number of shares, which are reflected in thousands, and per-share amounts):\n(1) As of September 30, 2023, the Company was authorized by the Board of Directors to purchase up to $90 billion "
+      "answer": "- Share repurchase activity during the three months ended September 30, 2023 was as follows (in millions, except number of shares, which are reflected in thousands, and per-share amounts):\n- The total number of shares ultimately delivered under the ASRs, and therefore the average repurchase price pa"
     },
     {
       "id": "a20",
       "kind": "number",
       "found": true,
-      "seconds": 0.0077535409945994616,
+      "seconds": 0.008388457936234772,
       "mode": "retrieval-only",
       "retrieval_hit": false,
       "citation_hit": false,
       "numeric": true,
       "exact": false,
-      "answer": "In May 2023, the Company announced a new share repurchase program of up to $90 billion and raised its quarterly dividend from $0.23 to $0.24 per share beginning in May 2023. During 2023, the Company repurchased $76.6 billion of its common stock and paid dividends and dividend equivalents of $15.0 bi"
+      "answer": "- Dividends and dividend equivalents declared | (14,996) | (14,793) | (14,431)\n- Dividends and dividend equivalents declared per share or RSU | 0.94 | 0.90 | 0.85\n- Apple Inc. | 2023 Form 10-K | 31\n\n[apple-10k-fy2023.pdf p.43]"
     },
     {
       "id": "a21",
       "kind": "text",
       "found": true,
-      "seconds": 0.013357750023715198,
+      "seconds": 0.007305791019462049,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": true,
       "exact": true,
-      "answer": "The Company\u2019s common stock is traded on The Nasdaq Stock Market LLC under the symbol AAPL.\n(1) As of September 30, 2023, the Company was authorized by the Board of Directors to purchase up to $90 billion of the Company\u2019s common stock under a share repurchase program announced on May 4, 2023, of whic"
+      "answer": "- The Company\u2019s common stock is traded on The Nasdaq Stock Market LLC under the symbol AAPL.\n- Under the terms of the ASRs, two financial institutions committed to deliver shares of the Company\u2019s common stock during the purchase periods in exchange for up-front payments totaling $5.0 billion.\n- (1) "
     },
     {
       "id": "a22",
       "kind": "number",
       "found": true,
-      "seconds": 0.08513691707048565,
+      "seconds": 0.013157708919607103,
       "mode": "retrieval-only",
       "retrieval_hit": true,
-      "citation_hit": false,
-      "numeric": false,
-      "exact": false,
-      "answer": "The Company\u2019s total net sales decreased 3% or $11.0 billion during 2023 compared to 2022. The weakness in foreign currencies relative to the U.S. dollar accounted for more than the entire year-over-year decrease in total net sales, which consisted primarily of lower net sales of Mac and iPhone, part"
+      "citation_hit": true,
+      "numeric": true,
+      "exact": true,
+      "answer": "- iPhone\n- iPhone net sales decreased 2% or $4.9 billion during 2023 compared to 2022 due to lower net sales of non-Pro iPhone models, partially offset by higher net sales of Pro iPhone models.\n- iPhone (1) | 200,583 | (2) | 205,489 | 7 | 191,973\n\n[apple-10k-fy2023.pdf p.33]"
     },
     {
       "id": "a90",
       "kind": "notfound",
       "found": false,
-      "seconds": 0.014423249987885356,
+      "seconds": 0.0009987920057028532,
       "mode": "retrieval-only",
       "correct": true,
       "answer": "not found in the documents"
@@ -294,7 +294,7 @@
       "id": "a91",
       "kind": "notfound",
       "found": false,
-      "seconds": 0.0019554579630494118,
+      "seconds": 0.0012947909999638796,
       "mode": "retrieval-only",
       "correct": true,
       "answer": "not found in the documents"
@@ -303,7 +303,7 @@
       "id": "a92",
       "kind": "notfound",
       "found": false,
-      "seconds": 0.001131917000748217,
+      "seconds": 0.0010713329538702965,
       "mode": "retrieval-only",
       "correct": true,
       "answer": "not found in the documents"
@@ -312,208 +312,208 @@
       "id": "a93",
       "kind": "notfound",
       "found": true,
-      "seconds": 0.00921237503644079,
+      "seconds": 0.004848000011406839,
       "mode": "retrieval-only",
       "correct": false,
-      "answer": "\u2022 MacBook Air 15\u201d, Mac Studio and Mac Pro; \u2022 Apple Vision Pro\u2122, the Company\u2019s first spatial computer featuring its new visionOS\u2122, expected to be available in early calendar year 2024; and \u2022 iOS 17, macOS Sonoma, iPadOS 17, tvOS 17 and watchOS 10, updates to the Company\u2019s operating systems.\n\u2022 iPad an"
+      "answer": "- \u2022 MacBook Air 15\u201d, Mac Studio and Mac Pro; \u2022 Apple Vision Pro\u2122, the Company\u2019s first spatial computer featuring its new visionOS\u2122, expected to be available in early calendar year 2024; and \u2022 iOS 17, macOS Sonoma, iPadOS 17, tvOS 17 and watchOS 10, updates to the Company\u2019s operating systems.\n- \u2022 iPa"
     },
     {
       "id": "n01",
       "kind": "number",
       "found": true,
-      "seconds": 0.009523708024062216,
+      "seconds": 0.010662458022125065,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "Pursuant to an agreement expiring in March 2032, Smithfield Foods, Inc., has been granted, among other things, (i) the exclusive right and obligation to manufacture, distribute, market and sell \u201cNathan\u2019s Famous\u201d branded hot dogs, and sausages in refrigerated consumer packages to be resold through re"
+      "answer": "- Pursuant to this agreement, Nathan\u2019s earned royalties of approximately $31,869,000 in fiscal 2025 and $28,456,000 in fiscal 2024 representing approximately 22% and 21% of total revenues, respectively.\n- Royalties earned under the retail agreement, including the foodservice program, were approximat"
     },
     {
       "id": "n02",
       "kind": "number",
       "found": true,
-      "seconds": 0.03438591700978577,
+      "seconds": 0.008305082912556827,
       "mode": "retrieval-only",
       "retrieval_hit": true,
-      "citation_hit": false,
-      "numeric": false,
-      "exact": false,
-      "answer": "March 30, March 31, 2025 2024 Operating lease income, net $ 87 $ 87\nThe components of lease income for the fiscal years ended March 30, 2025 and March 31, 2024 were as follows:\nOperating lease income, net | 87 | $ 87 [nathans-10k-fy2025.pdf p.103]"
+      "citation_hit": true,
+      "numeric": true,
+      "exact": true,
+      "answer": "- Net income | 24,026 | 19,616\n- Net income per share:\n- NOTE C \u2013 NET INCOME PER SHARE\n\n[nathans-10k-fy2025.pdf p.90]"
     },
     {
       "id": "n03",
       "kind": "number",
       "found": true,
-      "seconds": 0.012919750064611435,
+      "seconds": 0.011999708018265665,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": false,
       "exact": false,
-      "answer": "Basic net income per common share is calculated by dividing net income by the weighted average number of common shares outstanding and excludes any dilutive effect of share-based awards. Diluted net income per common share gives effect to all potentially dilutive common shares that were outstanding "
+      "answer": "- Diluted net income per common share gives effect to all potentially dilutive common shares that were outstanding during the period.\n- Net income per share:\n- Dilutive common shares used in the computation of diluted income per common share result from the assumed exercise of stock options as deter"
     },
     {
       "id": "n04",
       "kind": "number",
       "found": true,
-      "seconds": 0.014846042031422257,
+      "seconds": 0.011504041962325573,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "Cash and cash equivalents principally consist of cash in bank accounts, money market accounts and money market funds. The Company considers money market accounts and money market funds to be cash equivalents. Cash equivalents were $19,400 and $11,330 at March 30, 2025 and March 31, 2024, respectivel"
+      "answer": "- Cash equivalents were $19,400 and $11,330 at March 30, 2025 and March 31, 2024, respectively.\n- Cash and Cash Equivalents\n- The Company considers money market accounts and money market funds to be cash equivalents.\n\n[nathans-10k-fy2025.pdf p.76]"
     },
     {
       "id": "n05",
       "kind": "number",
       "found": true,
-      "seconds": 0.013987333979457617,
+      "seconds": 0.010071916971355677,
       "mode": "retrieval-only",
       "retrieval_hit": true,
-      "citation_hit": false,
-      "numeric": false,
-      "exact": false,
-      "answer": "The total income tax provision for the fiscal years ended March 30, 2025 and March 31, 2024 differs from the amounts computed by applying the United States Federal income tax rate of 21% to income before income taxes as a result of the following: March 30, March 31, 2025 2024 Income tax provision at"
+      "citation_hit": true,
+      "numeric": true,
+      "exact": true,
+      "answer": "- Total assets | 53,476 | 48,858\n- Total current assets | 45,135 | 38,776\n- ASSETS\n\n[nathans-10k-fy2025.pdf p.68]"
     },
     {
       "id": "n06",
       "kind": "number",
       "found": true,
-      "seconds": 0.0075732499826699495,
+      "seconds": 0.009179082931950688,
       "mode": "retrieval-only",
       "retrieval_hit": false,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "While this treatment impacts the gross amount of reported advertising fund revenue and related expenses, the impact is expected to approximately offset the increase to both revenue and expense, with minimal impact to income from operations or net income because the Company attempts to manage the Adv"
+      "answer": "- The effective income tax rate for the fiscal 2025 period was 26.7% compared to 28.5% for the fiscal 2024 period.\n- The effective income tax rate for the fiscal 2025 period reflected income tax expense of $8,735,000 recorded on $32,761,000 of pre-tax income.\n- Other income, net was $87,000 in the f"
     },
     {
       "id": "n07",
       "kind": "number",
       "found": true,
-      "seconds": 0.009453959064558148,
+      "seconds": 0.01653212495148182,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "Pursuant to an agreement expiring in March 2032, Smithfield Foods, Inc., has been granted, among other things, (i) the exclusive right and obligation to manufacture, distribute, market and sell \u201cNathan\u2019s Famous\u201d branded hot dogs, and sausages in refrigerated consumer packages to be resold through re"
+      "answer": "- During fiscal 2025 and 2024, we earned royalties of $1,559,000 and $1,371,000, respectively, from this license.\n- Royalties earned under the retail agreement, including the foodservice program, were approximately 90% of our fiscal 2025 period license revenues.\n- Pursuant to this agreement, Nathan\u2019"
     },
     {
       "id": "n08",
       "kind": "number",
       "found": true,
-      "seconds": 0.009420083020813763,
+      "seconds": 0.01544929202646017,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "Pursuant to an agreement expiring in March 2032, Smithfield Foods, Inc., has been granted, among other things, (i) the exclusive right and obligation to manufacture, distribute, market and sell \u201cNathan\u2019s Famous\u201d branded hot dogs, and sausages in refrigerated consumer packages to be resold through re"
+      "answer": "- Our revenues are generated primarily from selling products under Nathan\u2019s Branded Product Program, operating Company-owned restaurants, licensing agreements for the sale of Nathan\u2019s products within supermarkets, grocery stores and club stores, the manufacture of certain proprietary spices by third"
     },
     {
       "id": "n09",
       "kind": "number",
       "found": true,
-      "seconds": 0.007583500002510846,
+      "seconds": 0.009752541896887124,
       "mode": "retrieval-only",
       "retrieval_hit": true,
-      "citation_hit": true,
-      "numeric": true,
+      "citation_hit": false,
+      "numeric": false,
       "exact": false,
-      "answer": "In 2016, the Board authorized increases to the sixth stock repurchase plan for the repurchase of up to 1,200,000 shares of its common stock on behalf of the Company. As of March 30, 2025, Nathan\u2019s has repurchased 1,101,884 shares at a cost of approximately $39,000,000 under the sixth stock repurchas"
+      "answer": "- Our ability to pay future dividends is limited by the terms of our Credit Agreement.\n- Dividends\n- The Company paid dividends on common stock of $2.00 per share during each of the fiscal years ended March 30, 2025 and March 31, 2024.\n\n[nathans-10k-fy2025.pdf p.104]"
     },
     {
       "id": "n10",
       "kind": "number",
       "found": true,
-      "seconds": 0.011831208015792072,
+      "seconds": 0.016149125061929226,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": true,
       "exact": true,
-      "answer": "(In thousands) Fiscal year 2025 2024 Net cash provided by operating activities $ 25,240 $ 20,002 Net cash used in investing activities (225) (313) Net cash used in financing activities (18,240) (28,523) Net increase (decrease) in cash and cash equivalents $ 6,775 $ ( 8,834)\nNet cash provided by oper"
+      "answer": "- Net cash provided by operating activities | 25,240 | 20,002\n- (In thousands) Fiscal year 2025 2024 Net cash provided by operating activities $ 25,240 $ 20,002 Net cash used in investing activities (225) (313) Net cash used in financing activities (18,240) (28,523) Net increase (decrease) in cash a"
     },
     {
       "id": "n11",
       "kind": "number",
       "found": true,
-      "seconds": 0.013025542022660375,
+      "seconds": 0.017999500036239624,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": true,
       "exact": true,
-      "answer": "Long-term debt, net of unamortized debt issuance costs of $327 and $438, respectively (Note J) | 48,073 | 59,562\nCurrent portion of long-term debt (Note J) | 2,400\nLong-term portion of operating lease liabilities (Note K) | 3,528 | 4,937 [nathans-10k-fy2025.pdf p.68]"
+      "answer": "- Long-term debt, net of unamortized debt issuance costs of $327 and $438, respectively (Note J) | 48,073 | 59,562\n- Current portion of long-term debt (Note J) | 2,400\n- Long-term portion of operating lease liabilities (Note K) | 3,528 | 4,937\n\n[nathans-10k-fy2025.pdf p.68]"
     },
     {
       "id": "n12",
       "kind": "number",
       "found": true,
-      "seconds": 0.007975916960276663,
-      "mode": "retrieval-only",
-      "retrieval_hit": true,
-      "citation_hit": false,
-      "numeric": false,
-      "exact": false,
-      "answer": "REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM To the Stockholders and Board of Directors of Nathan\u2019s Famous, Inc. Opinion on the Financial Statements We have audited the accompanying consolidated balance sheet of Nathan\u2019s Famous, Inc. and Subsidiaries (the \u201cCompany\u201d) as of March 30, 2025, "
-    },
-    {
-      "id": "n13",
-      "kind": "number",
-      "found": true,
-      "seconds": 0.008897916995920241,
-      "mode": "retrieval-only",
-      "retrieval_hit": true,
-      "citation_hit": false,
-      "numeric": false,
-      "exact": false,
-      "answer": "If the Company pays regular quarterly cash dividends for fiscal 2026 at the same rate as declared in the first quarter of fiscal 2026, the Company\u2019s total cash requirement for dividends for all of fiscal 2026 would be approximately $8,179,000 based on the number of shares of common stock outstanding"
-    },
-    {
-      "id": "n14",
-      "kind": "number",
-      "found": true,
-      "seconds": 0.007103166077286005,
-      "mode": "retrieval-only",
-      "retrieval_hit": true,
-      "citation_hit": false,
-      "numeric": false,
-      "exact": false,
-      "answer": "The aggregate market value of the voting and non-voting stock held by non-affiliates of the Registrant, as of March 31, 2023, the last business day of the Registrant\u2019s most recently completed second fiscal quarter, was approximately $2,591,165,000,000. Solely for purposes of this disclosure, shares "
-    },
-    {
-      "id": "n15",
-      "kind": "number",
-      "found": true,
-      "seconds": 0.008466540952213109,
+      "seconds": 0.011333249974995852,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": true,
       "numeric": true,
       "exact": true,
-      "answer": "As of March 30, 2025, the Company employed 131 people, 30 of whom were corporate management and administrative employees, 18 of whom were restaurant managers and 83 of whom were hourly full-time and part-time foodservice employees.\nWe generally employ approximately 240-250 seasonal employees during "
+      "answer": "- STOCKHOLDERS\u2019 DEFICIT\n- Total stockholders\u2019 deficit | (16,513 | (32,923\n- Total liabilities and stockholders\u2019 deficit | 53,476 | 48,858\n\n[nathans-10k-fy2025.pdf p.68]"
     },
     {
-      "id": "n16",
-      "kind": "text",
+      "id": "n13",
+      "kind": "number",
       "found": true,
-      "seconds": 0.004026875016279519,
+      "seconds": 0.013404209050349891,
+      "mode": "retrieval-only",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "numeric": true,
+      "exact": true,
+      "answer": "- As of June 5, 2025, there were outstanding 4,089,510 shares of Common Stock, par value $.01 per share.\n- The aggregate market value of the voting and non-voting common equity held by non-affiliates of the registrant as of the last business day of the registrant\u2019s most recently completed second fis"
+    },
+    {
+      "id": "n14",
+      "kind": "number",
+      "found": true,
+      "seconds": 0.00986133306287229,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "10.8 ***2010 Stock Incentive Plan (Incorporated by reference to Exhibit A to Proxy Statement on Schedule 14A dated July 23, 2010). 10.9 ***Amendment to 2010 Stock Incentive Plan (Incorporated by reference to Exhibit A to Proxy Statement on Schedule 14A dated July 23, 2012). 10.10 ***Amendment to Emp"
+      "answer": "- The aggregate market value of the voting and non-voting stock held by non-affiliates of the Registrant, as of March 31, 2023, the last business day of the Registrant\u2019s most recently completed second fiscal quarter, was approximately $2,591,165,000,000.\n- Solely for purposes of this disclosure, sha"
+    },
+    {
+      "id": "n15",
+      "kind": "number",
+      "found": true,
+      "seconds": 0.012675832957029343,
+      "mode": "retrieval-only",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "numeric": true,
+      "exact": true,
+      "answer": "- As of March 30, 2025, the Company employed 131 people, 30 of whom were corporate management and administrative employees, 18 of whom were restaurant managers and 83 of whom were hourly full-time and part-time foodservice employees.\n- We generally employ approximately 240-250 seasonal employees dur"
+    },
+    {
+      "id": "n16",
+      "kind": "text",
+      "found": true,
+      "seconds": 0.007825249922461808,
+      "mode": "retrieval-only",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "numeric": true,
+      "exact": true,
+      "answer": "- We were incorporated in Delaware on July 10, 1992 under the name \u201cNathan\u2019s Famous Holding Corporation\u201d to act as the parent of a Delaware corporation then-known as Nathan\u2019s Famous, Inc.\n- The Delaware subsidiary was organized in October 1989 in connection with its re-incorporation in Delaware from"
     },
     {
       "id": "n17",
       "kind": "text",
       "found": false,
-      "seconds": 0.0014612500090152025,
+      "seconds": 0.0022474590223282576,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
@@ -525,61 +525,61 @@
       "id": "n18",
       "kind": "text",
       "found": true,
-      "seconds": 0.0041349169332534075,
-      "mode": "retrieval-only",
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "numeric": true,
-      "exact": true,
-      "answer": "One Jericho Plaza, Jericho, New York 11753 (Address of principal executive offices) (Zip Code) Registrant\u2019s telephone number, including area code: 516-338-8500\nNATHAN\u2019S FAMOUS, INC. (Exact name of registrant as specified in its charter) Delaware 11-3166443 (State or other jurisdiction of incorporati"
-    },
-    {
-      "id": "n19",
-      "kind": "number",
-      "found": true,
-      "seconds": 0.008729125023819506,
-      "mode": "retrieval-only",
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "numeric": true,
-      "exact": false,
-      "answer": "Interest expense of $4,106,000 in the fiscal 2025 period represented interest expense of $1,449,000 and $2,504,000 on the 2025 Notes and the Term Loan borrowings under the Credit Agreement, respectively, and amortization of debt issuance costs of $104,000 and $49,000 on the 2025 Notes and the Term L"
-    },
-    {
-      "id": "n20",
-      "kind": "text",
-      "found": true,
-      "seconds": 0.003137415973469615,
+      "seconds": 0.005158749991096556,
       "mode": "retrieval-only",
       "retrieval_hit": true,
       "citation_hit": false,
       "numeric": false,
       "exact": false,
-      "answer": "Trading symbol(s) Name of each exchange on which registered Common Stock, $0.00001 par value per share AAPL The Nasdaq Stock Market LLC 1.375% Notes due 2024 \u2014 The Nasdaq Stock Market LLC 0.000% Notes due 2025 \u2014 The Nasdaq Stock Market LLC 0.875% Notes due 2025 \u2014 The Nasdaq Stock Market LLC 1.625% N"
+      "answer": "- One Apple Park Way Cupertino, California 95014 (Address of principal executive offices) (Zip Code)\n\n[apple-10k-fy2023.pdf p.1]"
+    },
+    {
+      "id": "n19",
+      "kind": "number",
+      "found": true,
+      "seconds": 0.013710499973967671,
+      "mode": "retrieval-only",
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "numeric": true,
+      "exact": false,
+      "answer": "- Interest expense of $5,355,000 in the fiscal 2024 period represented interest expense of $5,010,000 on the 2025 Notes and amortization of debt issuance costs of $345,000.\n- Interest expense of $4,106,000 in the fiscal 2025 period represented interest expense of $1,449,000 and $2,504,000 on the 202"
+    },
+    {
+      "id": "n20",
+      "kind": "text",
+      "found": true,
+      "seconds": 0.004117083037272096,
+      "mode": "retrieval-only",
+      "retrieval_hit": true,
+      "citation_hit": false,
+      "numeric": true,
+      "exact": true,
+      "answer": "- Title of each class Trading Symbol(s)\n- registered Common Stock, par value $.01 per share NATH The NASDAQ Global Market\n- NATHAN\u2019S FAMOUS, INC. (Exact name of registrant as specified in its charter) Delaware 11-3166443 (State or other jurisdiction of incorporation or\n\n[nathans-10k-fy2025.pdf p.1]"
     },
     {
       "id": "n90",
       "kind": "notfound",
       "found": true,
-      "seconds": 0.005584583035670221,
+      "seconds": 0.008485250058583915,
       "mode": "retrieval-only",
       "correct": false,
-      "answer": "Through separate licensed manufacturing agreements, Nathan\u2019s World Famous Beef Hot Dogs are currently manufactured in Brazil, Germany, Egypt and the United Arab Emirates.\nOur Nathan\u2019s Famous Branded Menu Program enables qualified foodservice operators to offer a Nathan\u2019s Famous menu of Nathan\u2019s Worl"
+      "answer": "- Through separate licensed manufacturing agreements, Nathan\u2019s World Famous Beef Hot Dogs are currently manufactured in Brazil, Germany, Egypt and the United Arab Emirates.\n- Additionally, the operator may use Nathan\u2019s Famous paper goods and point of sale marketing materials.\n- As of March 30, 2025,"
     },
     {
       "id": "n91",
       "kind": "notfound",
       "found": true,
-      "seconds": 0.004861790919676423,
+      "seconds": 0.0073201669147238135,
       "mode": "retrieval-only",
       "correct": false,
-      "answer": "We hold trademark and/or service mark registrations for NATHAN\u2019S, NATHAN\u2019S FAMOUS, NATHAN\u2019S FAMOUS and design, SINCE 1916 NATHAN\u2019S FAMOUS and design, SINCE 1916 NATHAN\u2019S FAMOUS, INC. and design, THE ORIGINAL SINCE 1916 NATHAN\u2019S FAMOUS and design, SINCE 1916 NATHAN\u2019S FAMOUS THIS IS THE ORIGINAL, THE "
+      "answer": "- We hold trademark and/or service mark registrations for NATHAN\u2019S, NATHAN\u2019S FAMOUS, NATHAN\u2019S FAMOUS and design, SINCE 1916 NATHAN\u2019S FAMOUS and design, SINCE 1916 NATHAN\u2019S FAMOUS, INC. and design, THE ORIGINAL SINCE 1916 NATHAN\u2019S FAMOUS and design, SINCE 1916 NATHAN\u2019S FAMOUS THIS IS THE ORIGINAL, TH"
     },
     {
       "id": "n92",
       "kind": "notfound",
       "found": false,
-      "seconds": 0.0013353329850360751,
+      "seconds": 0.0015236249892041087,
       "mode": "retrieval-only",
       "correct": true,
       "answer": "not found in the documents"
