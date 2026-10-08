@@ -1,3 +1,7 @@
+> **Note added later:** the "Validated" claims below (revenue, net income and EPS marked correct) came from an extraction prompt that
+> already contained those values, so they are not a validation. Other numbers and claims in this README are also contradicted by the
+> saved outputs. See [docs/AUDIT.md](../docs/AUDIT.md). The text below is kept unchanged.
+
 # FinSight AI: Financial Document Intelligence Engine
 
 Live Demo: https://huggingface.co/spaces/MFH-001/FinSight-AI
