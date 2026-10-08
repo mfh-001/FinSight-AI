@@ -1,0 +1,49 @@
+{"id": "a01", "doc": "apple-10k-fy2023.pdf", "question": "What were Apple's total net sales in fiscal 2023?", "kind": "number", "pages": [32, 33, 40, 47, 61], "value": 383285, "unit": "millions"}
+{"id": "a02", "doc": "apple-10k-fy2023.pdf", "question": "What were Apple's total net sales in fiscal 2022?", "kind": "number", "pages": [32, 33, 40, 47, 61], "value": 394328, "unit": "millions"}
+{"id": "a03", "doc": "apple-10k-fy2023.pdf", "question": "What was Apple's net income in fiscal 2023?", "kind": "number", "pages": [40, 41, 43, 44, 47], "value": 96995, "unit": "millions"}
+{"id": "a04", "doc": "apple-10k-fy2023.pdf", "question": "What was Apple's diluted earnings per share in fiscal 2023?", "kind": "number", "pages": [40, 47], "value": 6.13, "unit": "units"}
+{"id": "a05", "doc": "apple-10k-fy2023.pdf", "question": "What was Apple's operating income in fiscal 2023?", "kind": "number", "pages": [40, 60], "value": 114301, "unit": "millions"}
+{"id": "a06", "doc": "apple-10k-fy2023.pdf", "question": "What was Apple's gross margin in dollars for fiscal 2023?", "kind": "number", "pages": [34, 40], "value": 169148, "unit": "millions"}
+{"id": "a07", "doc": "apple-10k-fy2023.pdf", "question": "How much did Apple spend on research and development in fiscal 2023?", "kind": "number", "pages": [40, 60], "value": 29915, "unit": "millions"}
+{"id": "a08", "doc": "apple-10k-fy2023.pdf", "question": "How much cash and cash equivalents did Apple have at the end of fiscal 2023?", "kind": "number", "pages": [42, 48], "value": 29965, "unit": "millions"}
+{"id": "a09", "doc": "apple-10k-fy2023.pdf", "question": "What were Apple's total assets at September 30, 2023?", "kind": "number", "pages": [42], "value": 352583, "unit": "millions"}
+{"id": "a10", "doc": "apple-10k-fy2023.pdf", "question": "What were Apple's total liabilities at September 30, 2023?", "kind": "number", "pages": [42], "value": 290437, "unit": "millions"}
+{"id": "a11", "doc": "apple-10k-fy2023.pdf", "question": "How much cash did Apple generate from operating activities in fiscal 2023?", "kind": "number", "pages": [44], "value": 110543, "unit": "millions"}
+{"id": "a12", "doc": "apple-10k-fy2023.pdf", "question": "How many full-time equivalent employees did Apple have as of September 30, 2023?", "kind": "number", "pages": [8], "value": 161000, "unit": "units"}
+{"id": "a13", "doc": "apple-10k-fy2023.pdf", "question": "What were Apple's net sales in Greater China in fiscal 2023?", "kind": "number", "pages": [32, 60, 61], "value": 72559, "unit": "millions"}
+{"id": "a14", "doc": "apple-10k-fy2023.pdf", "question": "What were Apple's net sales in the Americas segment in fiscal 2023?", "kind": "number", "pages": [32, 60], "value": 162560, "unit": "millions"}
+{"id": "a15", "doc": "apple-10k-fy2023.pdf", "question": "What were Apple's net sales in Japan in fiscal 2023?", "kind": "number", "pages": [32, 60], "value": 24257, "unit": "millions"}
+{"id": "a16", "doc": "apple-10k-fy2023.pdf", "question": "How many shares of Apple common stock were outstanding as of October 20, 2023?", "kind": "number", "pages": [2], "value": 15552752000, "unit": "units"}
+{"id": "a17", "doc": "apple-10k-fy2023.pdf", "question": "What was the aggregate market value of Apple stock held by non-affiliates?", "kind": "number", "pages": [2], "value": 2591165000000, "unit": "units"}
+{"id": "a18", "doc": "apple-10k-fy2023.pdf", "question": "What were Apple's Services net sales in fiscal 2023?", "kind": "number", "pages": [33, 40, 47], "value": 85200, "unit": "millions"}
+{"id": "a19", "doc": "apple-10k-fy2023.pdf", "question": "How many shares did Apple repurchase during 2023?", "kind": "number", "pages": [56], "value": 471, "unit": "millions"}
+{"id": "a20", "doc": "apple-10k-fy2023.pdf", "question": "How much did Apple pay in dividends and dividend equivalents in fiscal 2023?", "kind": "number", "pages": [44], "value": 15025, "unit": "millions"}
+{"id": "a21", "doc": "apple-10k-fy2023.pdf", "question": "On which exchange is Apple's common stock traded?", "kind": "text", "pages": [1, 29], "answer": "Nasdaq"}
+{"id": "a22", "doc": "apple-10k-fy2023.pdf", "question": "What were Apple's iPhone net sales in fiscal 2023?", "kind": "number", "pages": [33], "value": 200583, "unit": "millions"}
+{"id": "a90", "doc": "apple-10k-fy2023.pdf", "question": "How much did Apple invest in OpenAI?", "kind": "notfound", "pages": []}
+{"id": "a91", "doc": "apple-10k-fy2023.pdf", "question": "What was Microsoft's total revenue in fiscal 2023?", "kind": "notfound", "pages": []}
+{"id": "a92", "doc": "apple-10k-fy2023.pdf", "question": "How many bitcoin does Apple hold?", "kind": "notfound", "pages": []}
+{"id": "a93", "doc": "apple-10k-fy2023.pdf", "question": "What is the launch price of the Apple Vision Pro?", "kind": "notfound", "pages": []}
+{"id": "n01", "doc": "nathans-10k-fy2025.pdf", "question": "What were Nathan's Famous total revenues in fiscal 2025?", "kind": "number", "pages": [44, 70, 86, 97], "value": 148182, "unit": "thousands"}
+{"id": "n02", "doc": "nathans-10k-fy2025.pdf", "question": "What was Nathan's Famous net income in fiscal 2025?", "kind": "number", "pages": [47, 50, 70, 72, 73, 90], "value": 24026, "unit": "thousands"}
+{"id": "n03", "doc": "nathans-10k-fy2025.pdf", "question": "What was Nathan's Famous diluted net income per share in fiscal 2025?", "kind": "number", "pages": [70, 90], "value": 5.87, "unit": "units"}
+{"id": "n04", "doc": "nathans-10k-fy2025.pdf", "question": "How much cash and cash equivalents did Nathan's Famous have at March 30, 2025?", "kind": "number", "pages": [49, 51, 54, 68, 73], "value": 27802, "unit": "thousands"}
+{"id": "n05", "doc": "nathans-10k-fy2025.pdf", "question": "What were Nathan's Famous total assets at March 30, 2025?", "kind": "number", "pages": [68], "value": 53476, "unit": "thousands"}
+{"id": "n06", "doc": "nathans-10k-fy2025.pdf", "question": "What was Nathan's Famous income from operations in fiscal 2025?", "kind": "number", "pages": [70, 97], "value": 36497, "unit": "thousands"}
+{"id": "n07", "doc": "nathans-10k-fy2025.pdf", "question": "What were Nathan's Famous license royalties in fiscal 2025?", "kind": "number", "pages": [6, 45, 70, 86, 97], "value": 37418, "unit": "thousands"}
+{"id": "n08", "doc": "nathans-10k-fy2025.pdf", "question": "What were Nathan's Famous Branded Products revenues in fiscal 2025?", "kind": "number", "pages": [11, 45, 70, 86, 97], "value": 91828, "unit": "thousands"}
+{"id": "n09", "doc": "nathans-10k-fy2025.pdf", "question": "How much did Nathan's Famous pay in dividends to stockholders in fiscal 2025?", "kind": "number", "pages": [50, 51, 72, 73], "value": 8172, "unit": "thousands"}
+{"id": "n10", "doc": "nathans-10k-fy2025.pdf", "question": "How much net cash did Nathan's Famous provide from operating activities in fiscal 2025?", "kind": "number", "pages": [49, 73], "value": 25240, "unit": "thousands"}
+{"id": "n11", "doc": "nathans-10k-fy2025.pdf", "question": "What was Nathan's Famous long-term debt, net of issuance costs, at March 30, 2025?", "kind": "number", "pages": [68, 99], "value": 48073, "unit": "thousands"}
+{"id": "n12", "doc": "nathans-10k-fy2025.pdf", "question": "What was Nathan's Famous total stockholders' deficit at March 30, 2025?", "kind": "number", "pages": [68, 72], "value": 16513, "unit": "thousands"}
+{"id": "n13", "doc": "nathans-10k-fy2025.pdf", "question": "How many shares of Nathan's Famous common stock were outstanding as of June 5, 2025?", "kind": "number", "pages": [2, 68], "value": 4089510, "unit": "units"}
+{"id": "n14", "doc": "nathans-10k-fy2025.pdf", "question": "What was the aggregate market value of Nathan's Famous stock held by non-affiliates?", "kind": "number", "pages": [2], "value": 229609000, "unit": "units"}
+{"id": "n15", "doc": "nathans-10k-fy2025.pdf", "question": "How many people did Nathan's Famous employ as of March 30, 2025?", "kind": "number", "pages": [15], "value": 131, "unit": "units"}
+{"id": "n16", "doc": "nathans-10k-fy2025.pdf", "question": "In which state was Nathan's Famous incorporated?", "kind": "text", "pages": [7], "answer": "Delaware"}
+{"id": "n17", "doc": "nathans-10k-fy2025.pdf", "question": "Who is named as Chief Executive Officer in the Nathan's Famous certifications?", "kind": "text", "pages": [63], "answer": "Eric Gatoff"}
+{"id": "n18", "doc": "nathans-10k-fy2025.pdf", "question": "In which city are Nathan's Famous principal executive offices?", "kind": "text", "pages": [1, 19, 61, 62], "answer": "Jericho"}
+{"id": "n19", "doc": "nathans-10k-fy2025.pdf", "question": "How much was Nathan's Famous interest expense in fiscal 2025?", "kind": "number", "pages": [46, 47, 70, 97], "value": 4106, "unit": "thousands"}
+{"id": "n20", "doc": "nathans-10k-fy2025.pdf", "question": "What is Nathan's Famous Nasdaq trading symbol?", "kind": "text", "pages": [40], "answer": "NATH"}
+{"id": "n90", "doc": "nathans-10k-fy2025.pdf", "question": "What is Nathan's Famous market share in Germany?", "kind": "notfound", "pages": []}
+{"id": "n91", "doc": "nathans-10k-fy2025.pdf", "question": "How many bitcoin does Nathan's Famous hold?", "kind": "notfound", "pages": []}
+{"id": "n92", "doc": "nathans-10k-fy2025.pdf", "question": "Did Nathan's Famous acquire Burger King in 2025?", "kind": "notfound", "pages": []}

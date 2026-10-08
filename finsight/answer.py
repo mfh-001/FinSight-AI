@@ -63,6 +63,11 @@ def build_context(retriever: Retriever, hits: list[Hit], char_budget: int = 9000
     return "\n\n".join(blocks)
 
 
+def _coverage(question: str, page_text: str) -> float:
+    q = set(tokenize(question))
+    return len(q & set(tokenize(page_text))) / len(q) if q else 0.0
+
+
 def _best_lines(question: str, page_text: str, n: int = 3) -> list[str]:
     q = set(tokenize(question))
     scored = []
@@ -88,6 +93,8 @@ def answer_question(
 
     if backend is None:
         top = hits[0]
+        if _coverage(question, retriever.page(top.doc, top.page).content) < cfg.min_coverage:
+            return Answer(NOT_FOUND, False, [], hits, "retrieval-only", time.perf_counter() - t0)
         lines = _best_lines(question, retriever.page(top.doc, top.page).content)
         text = "\n".join(lines) + f" [{top.doc} p.{top.page}]"
         return Answer(text, True, [top.key], hits, "retrieval-only", time.perf_counter() - t0)

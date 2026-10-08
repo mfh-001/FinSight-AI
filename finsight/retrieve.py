@@ -18,7 +18,8 @@ _STOP = set(
 
 def tokenize(text: str) -> list[str]:
     text = re.sub(r"(?<=\d),(?=\d{3})", "", text.lower())  # 383,285 -> 383285
-    return [t for t in re.findall(r"[a-z0-9][a-z0-9.]*", text) if t not in _STOP]
+    toks = re.findall(r"[a-z0-9][a-z0-9.]*", text)
+    return [t.rstrip(".") for t in toks if t.rstrip(".") not in _STOP and len(t.rstrip(".")) > 1]
 
 
 @dataclass(frozen=True)

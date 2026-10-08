@@ -25,6 +25,8 @@ class Config:
     use_vision: bool = False  # send page images to the model
     visual_retriever: str = ""  # e.g. vidore/colpali-v1.2, empty means off
     top_k: int = 4
+    # retrieval-only mode: share of question words the best page must contain
+    min_coverage: float = 0.5
     max_new_tokens: int = 400
     retention_days: int = 0  # 0 keeps files until you delete them
 
@@ -51,6 +53,8 @@ class Config:
 
 def _cast(typ: object, value: str):
     name = typ if isinstance(typ, str) else getattr(typ, "__name__", "")
+    if name == "float":
+        return float(value)
     if name == "int":
         return int(value)
     if name == "bool":

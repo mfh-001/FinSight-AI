@@ -59,3 +59,8 @@ def test_no_hits_skips_model():
 def test_retrieval_only_mode():
     a = answer_question("net income", retriever(), None, Config())
     assert a.mode == "retrieval-only" and "96,995" in a.text and a.citations == [("apple.pdf", 2)]
+
+
+def test_retrieval_only_refuses_when_question_words_are_missing():
+    a = answer_question("how many bitcoin does acme hold", retriever(), None, Config())
+    assert not a.found and a.text == NOT_FOUND
