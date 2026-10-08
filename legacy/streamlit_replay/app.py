@@ -1,9 +1,9 @@
-import streamlit as st
 import json
 import os
-from PIL import Image
-import io
-import base64
+
+import streamlit as st
+
+DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "recorded_run")
 
 st.set_page_config(
     page_title="FinSight AI",
@@ -157,20 +157,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ── Ticker
-st.markdown("""
-<div class="ticker-wrap"><div class="ticker-content">
-  <span style="margin-right:3rem">AAPL <span class="ticker-up">▲ 2.34%</span></span>
-  <span style="margin-right:3rem">MSFT <span class="ticker-up">▲ 1.12%</span></span>
-  <span style="margin-right:3rem">GOOGL <span class="ticker-down">▼ 0.45%</span></span>
-  <span style="margin-right:3rem">JPM <span class="ticker-up">▲ 0.89%</span></span>
-  <span style="margin-right:3rem">GS <span class="ticker-down">▼ 1.23%</span></span>
-  <span style="margin-right:3rem">NVDA <span class="ticker-up">▲ 3.45%</span></span>
-  <span style="margin-right:3rem">S&P 500 <span class="ticker-up">▲ 0.94%</span></span>
-  <span style="margin-right:3rem">10Y UST <span class="ticker-down">▼ 4.23%</span></span>
-</div></div>
-""", unsafe_allow_html=True)
-
 # ── Hero
 st.markdown("""
 <div class="hero">
@@ -191,6 +177,15 @@ st.markdown("""
 <div class="divider"></div>
 """, unsafe_allow_html=True)
 
+# recorded-run banner
+st.markdown("""
+<div class="gpu-banner">
+    <strong style="color:#f0b429;">Recorded run, not live inference.</strong>
+    This page replays saved output from the original Kaggle notebook. For the app that takes
+    your own PDF, see the main FinSight AI app. Known problems with this recording are in docs/AUDIT.md.
+</div>
+""", unsafe_allow_html=True)
+
 # ── GPU notice
 st.markdown("""
 <div class="gpu-banner">
@@ -207,15 +202,15 @@ st.markdown("""
 @st.cache_data
 def load_results():
     extracted, risk = [], []
-    if os.path.exists("extracted_data.json"):
-        with open("extracted_data.json") as f:
+    if os.path.exists(os.path.join(DATA, "extracted_data.json")):
+        with open(os.path.join(DATA, "extracted_data.json")) as f:
             extracted = json.load(f)
-    if os.path.exists("risk_reports.json"):
-        with open("risk_reports.json") as f:
+    if os.path.exists(os.path.join(DATA, "risk_reports.json")):
+        with open(os.path.join(DATA, "risk_reports.json")) as f:
             risk = json.load(f)
     config = {}
-    if os.path.exists("pipeline_config.json"):
-        with open("pipeline_config.json") as f:
+    if os.path.exists(os.path.join(DATA, "pipeline_config.json")):
+        with open(os.path.join(DATA, "pipeline_config.json")) as f:
             config = json.load(f)
     return extracted, risk, config
 
@@ -336,10 +331,10 @@ with tab1:
                         )
 
         # Pipeline results image
-        if os.path.exists("pipeline_results.png"):
+        if os.path.exists(os.path.join(DATA, "pipeline_results.png")):
             st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
             st.markdown('<div class="section-label">Pipeline visualisation</div>', unsafe_allow_html=True)
-            st.image("pipeline_results.png", use_column_width=True)
+            st.image(os.path.join(DATA, "pipeline_results.png"), use_column_width=True)
 
     else:
         st.markdown("""
