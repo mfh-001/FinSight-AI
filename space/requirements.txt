@@ -1,0 +1,1 @@
+finsight-ai[app] @ git+https://github.com/mfh-001/FinSight-AI.git@main

@@ -104,7 +104,7 @@ class TransformersBackend:
             )
             kwargs["device_map"] = "auto"
         else:
-            kwargs["torch_dtype"] = torch.float16 if device != "cpu" else torch.float32
+            kwargs["torch_dtype"] = torch.float16 if device != "cpu" else torch.bfloat16
 
         from transformers import AutoModelForCausalLM, AutoProcessor, AutoTokenizer
 
