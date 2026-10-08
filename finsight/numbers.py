@@ -35,7 +35,8 @@ def parse_amount(value) -> tuple[float | None, str | None]:
     if not m:
         return None, None
     num = float(m.group("num").replace(",", ""))
-    negative = bool(m.group("neg")) or (s.startswith("(") and s.endswith(")"))
+    # table cells often split "(565)" so the closing bracket can be missing
+    negative = bool(m.group("neg")) or s.startswith("(")
     unit = None
     if m.group("scale"):
         unit = _SCALE_WORDS.get(m.group("scale").lower())
