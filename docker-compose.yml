@@ -1,0 +1,50 @@
+# CPU only:           docker compose --profile cpu up
+# With a local GPU:   docker compose --profile gpu up
+services:
+  app:
+    profiles: ["cpu"]
+    build: .
+    ports: ["7860:7860"]
+    volumes: ["finsight-data:/data"]
+    environment:
+      FINSIGHT_BACKEND: ${FINSIGHT_BACKEND:-none}
+      FINSIGHT_LLM_BASE_URL: ${FINSIGHT_LLM_BASE_URL:-http://host.docker.internal:11434/v1}
+      FINSIGHT_LLM_MODEL: ${FINSIGHT_LLM_MODEL:-qwen2.5:3b}
+      FINSIGHT_AUTH: ${FINSIGHT_AUTH:-}
+      FINSIGHT_RETENTION_DAYS: ${FINSIGHT_RETENTION_DAYS:-0}
+    extra_hosts: ["host.docker.internal:host-gateway"]
+
+  app-gpu:
+    profiles: ["gpu"]
+    build: .
+    ports: ["7860:7860"]
+    volumes: ["finsight-data:/data"]
+    depends_on: [vllm]
+    environment:
+      FINSIGHT_BACKEND: openai
+      FINSIGHT_LLM_BASE_URL: http://vllm:8000/v1
+      FINSIGHT_LLM_MODEL: Qwen/Qwen2.5-VL-7B-Instruct-AWQ
+      FINSIGHT_USE_VISION: "true"
+      FINSIGHT_AUTH: ${FINSIGHT_AUTH:-}
+      FINSIGHT_RETENTION_DAYS: ${FINSIGHT_RETENTION_DAYS:-0}
+
+  vllm:
+    profiles: ["gpu"]
+    image: vllm/vllm-openai:v0.10.2
+    command: >
+      --model Qwen/Qwen2.5-VL-7B-Instruct-AWQ
+      --max-model-len 8192
+      --limit-mm-per-prompt image=2
+    volumes: ["hf-cache:/root/.cache/huggingface"]
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+volumes:
+  finsight-data:
+  hf-cache:
