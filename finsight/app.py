@@ -85,8 +85,9 @@ def build_app(cfg: Config | None = None) -> gr.Blocks:
         ans = state.engine.ask(question, None if doc_choice == "All" else doc_choice)
         if ans.mode == "retrieval-only":
             note = (
-                "No model is configured here, so this shows the best matching lines from the "
-                "cited page. Run locally with a model for full answers."
+                "This server has no language model, so it shows the best matching lines from the "
+                "cited page. Written answers and reading scanned pages or charts need a GPU or a "
+                "local run, see the README."
             )
         elif ans.mode == "model":
             note = f"Answered by {state.engine.backend.name}."
@@ -146,7 +147,9 @@ def build_app(cfg: Config | None = None) -> gr.Blocks:
         gr.Markdown(
             "# FinSight AI\n"
             "Ask questions about financial PDFs and get answers with page citations. "
-            "Files stay on this server and are deleted when your session ends."
+            "Files stay on this server and are deleted when your session ends. "
+            "This free server runs the text path only: it reads born-digital PDFs and shows "
+            "the best matching lines with page numbers."
         )
         with gr.Row():
             files = gr.File(
