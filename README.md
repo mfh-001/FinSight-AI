@@ -8,7 +8,7 @@ Ask questions about financial PDFs and get answers with page citations. Runs loc
 
 [![CI](https://github.com/mfh-001/FinSight-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/mfh-001/FinSight-AI/actions/workflows/ci.yml)
 [![HF Space](https://img.shields.io/badge/%F0%9F%A4%97-Space-yellow)](https://huggingface.co/spaces/MFH-001/FinSight-AI)
-<!-- add the license badge here once a LICENSE file is added -->
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ```bash
 pip install "finsight-ai[app] @ git+https://github.com/mfh-001/FinSight-AI.git"
