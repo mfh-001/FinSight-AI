@@ -63,20 +63,32 @@ def build_context(retriever: Retriever, hits: list[Hit], char_budget: int = 9000
     return "\n\n".join(blocks)
 
 
-def _coverage(question: str, page_text: str) -> float:
+def _coverage(question: str, page_text: str, retriever: Retriever) -> float:
+    """Share of the question's rare words that the page contains."""
     q = set(tokenize(question))
-    return len(q & set(tokenize(page_text))) / len(q) if q else 0.0
+    if not q:
+        return 0.0
+    have = set(tokenize(page_text))
+    return sum(retriever.idf(t) for t in q & have) / sum(retriever.idf(t) for t in q)
 
 
-def _best_lines(question: str, page_text: str, n: int = 3) -> list[str]:
+def _best_lines(question: str, retriever: Retriever, hits: list[Hit], n: int = 3):
+    """Best matching lines over the top pages. Returns (page hit, lines)."""
     q = set(tokenize(question))
-    scored = []
-    for line in page_text.splitlines():
-        t = set(tokenize(line))
-        if t & q:
-            scored.append((len(t & q), -len(line), line.strip()))
-    scored.sort(reverse=True)
-    return [s[2] for s in scored[:n]]
+    best: tuple[float, Hit] | None = None
+    per_page: dict[tuple[str, int], list[tuple[float, str]]] = {}
+    for h in hits:
+        for line in retriever.page(h.doc, h.page).content.splitlines():
+            overlap = q & set(tokenize(line))
+            if overlap:
+                sc = sum(retriever.idf(t) for t in overlap)
+                per_page.setdefault(h.key, []).append((sc, line.strip()))
+                if best is None or sc > best[0]:
+                    best = (sc, h)
+    if best is None:
+        return hits[0], []
+    lines = sorted(per_page[best[1].key], key=lambda x: -x[0])[:n]
+    return best[1], [ln for _, ln in lines]
 
 
 def answer_question(
@@ -93,9 +105,12 @@ def answer_question(
 
     if backend is None:
         top = hits[0]
-        if _coverage(question, retriever.page(top.doc, top.page).content) < cfg.min_coverage:
+        if (
+            _coverage(question, retriever.page(top.doc, top.page).content, retriever)
+            < cfg.min_coverage
+        ):
             return Answer(NOT_FOUND, False, [], hits, "retrieval-only", time.perf_counter() - t0)
-        lines = _best_lines(question, retriever.page(top.doc, top.page).content)
+        top, lines = _best_lines(question, retriever, hits)
         text = "\n".join(lines) + f" [{top.doc} p.{top.page}]"
         return Answer(text, True, [top.key], hits, "retrieval-only", time.perf_counter() - t0)
 

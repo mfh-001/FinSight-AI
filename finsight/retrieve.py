@@ -91,6 +91,11 @@ class Retriever:
             rankings.append(self.visual.search(query, self.pages, wide))
         return rrf(rankings)[:k]
 
+    def idf(self, token: str) -> float:
+        """Rarity weight. A word that appears nowhere in the corpus counts as the rarest."""
+        known = self.bm25.idf
+        return known.get(token, max(known.values(), default=1.0))
+
     def page(self, doc: str, number: int) -> Page:
         for p in self.pages:
             if p.doc == doc and p.number == number:
