@@ -47,6 +47,7 @@ class RiskReport:
 
 
 def _fmt(x: float, unit: str = "") -> str:
+    unit = "" if unit == "units" else unit.removesuffix("s")
     s = f"{x:,.0f}" if abs(x) >= 1000 else f"{x:,.2f}".rstrip("0").rstrip(".")
     return f"{s} {unit}".strip()
 
