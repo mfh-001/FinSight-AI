@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finsight-ai"
+version = "0.2.0"
+description = "Ask questions about financial PDFs and get answers with page citations. Runs locally on open models."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Muhammad Fahad Hassan" }]
+dependencies = [
+    "pymupdf==1.28.2",
+    "pydantic==2.13.5",
+    "openpyxl==3.1.5",
+    "pillow==12.3.0",
+    "numpy==2.5.3",
+    "pyyaml==6.0.3",
+    "requests==2.34.2",
+]
+
+[project.optional-dependencies]
+app = ["gradio==6.29.1"]
+dev = ["pytest==9.1.1", "ruff==0.16.10"]
+# install .[gpu,colpali] together, the pins resolve with each other (checked with pip --dry-run)
+gpu = [
+    "torch==2.7.1",
+    "transformers==4.53.3",
+    "accelerate==1.10.1",
+    "bitsandbytes==0.46.1; sys_platform == 'linux'",
+]
+colpali = ["colpali-engine==0.3.12"]
+
+[project.scripts]
+finsight = "finsight.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["finsight*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["legacy", "notebooks"]
