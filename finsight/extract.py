@@ -179,3 +179,171 @@ def extract_with_model(schema_name: str, pages: list[Page], backend: Backend, ma
                 f"\n\nYour last reply was invalid ({str(e)[:200]}). Reply with valid JSON only."
             )
     return None
+
+
+# ---- rules for invoices and bank statements, used when no model is configured ----
+
+_DATE = r"(\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{4}|[A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}|\d{1,2} [A-Z][a-z]{2,8} \d{4})"  # noqa: E501
+_CURRENCY = {
+    "$": "USD",
+    "€": "EUR",
+    "£": "GBP",
+    "USD": "USD",
+    "EUR": "EUR",
+    "GBP": "GBP",
+    "SAR": "SAR",
+    "AED": "AED",
+}  # noqa: E501
+
+
+def _lines(pages: list[Page]) -> list[str]:
+    out = []
+    for p in pages:
+        out += [ln.strip() for ln in p.text.splitlines() if ln.strip()]
+        out += [" | ".join(r) for t in p.tables for r in t]
+    return out
+
+
+def _find(rx: str, lines: list[str], flags=re.IGNORECASE) -> str | None:
+    for ln in lines:
+        m = re.search(rx, ln, flags)
+        if m:
+            return m.group(1).strip()
+    return None
+
+
+def _amount_after(label_rx: str, lines: list[str]) -> float | None:
+    for ln in lines:
+        if re.match(label_rx, ln, re.IGNORECASE):
+            vals = [normalize_number(t) for t in re.split(r"[\s|:]+", ln)[1:]]
+            vals = [v for v in vals if v is not None]
+            if not vals:
+                vals = [normalize_number(m) for m in re.findall(r"[$€£]?\s?\(?[\d,]+\.?\d*\)?", ln)]
+                vals = [v for v in vals if v is not None]
+            if vals:
+                return vals[-1]
+    return None
+
+
+def _currency(lines: list[str]) -> str | None:
+    text = "\n".join(lines)
+    for sym, code in _CURRENCY.items():
+        if sym in text:
+            return code
+    return None
+
+
+def _table_with_header(pages: list[Page], must: tuple[str, ...]):
+    for p in pages:
+        for t in p.raw_tables or p.tables:
+            for i, row in enumerate(t):
+                low = [c.lower() for c in row]
+                if all(any(m in c for c in low) for m in must):
+                    return low, t[i + 1 :]
+    return None, []
+
+
+def _col(header: list[str], *names: str) -> int | None:
+    for i, h in enumerate(header):
+        if any(n in h for n in names):
+            return i
+    return None
+
+
+def extract_invoice_rules(pages: list[Page]):
+    from .schemas import Invoice, InvoiceLine
+
+    lines = _lines(pages)
+    vendor = next((ln for ln in lines if not re.match(r"invoice\b", ln, re.I)), None)
+    header, rows = _table_with_header(pages, ("description", "amount"))
+    items = []
+    if header:
+        d, q = _col(header, "description"), _col(header, "qty", "quantity")
+        u, a = _col(header, "unit price", "price", "rate"), _col(header, "amount", "total")
+
+        def cell(r, i):
+            return r[i] if i is not None and i < len(r) else None
+
+        for r in rows:
+            if normalize_number(cell(r, a)) is None:
+                continue
+            items.append(
+                InvoiceLine(
+                    description=cell(r, d),
+                    quantity=cell(r, q),
+                    unit_price=cell(r, u),
+                    amount=cell(r, a),
+                )  # noqa: E501
+            )
+    return Invoice(
+        vendor=vendor,
+        invoice_number=_find(r"invoice\s*(?:no\.?|number|#)\s*[:#]?\s*([A-Z0-9][A-Z0-9-]*)", lines),
+        invoice_date=_find(r"^(?:invoice )?date\s*:?\s*" + _DATE, lines),
+        due_date=_find(r"due(?: date)?\s*:?\s*" + _DATE, lines),
+        currency=_currency(lines),
+        subtotal=_amount_after(r"sub-?total\b", lines),
+        tax=_amount_after(r"(sales tax|vat|tax)\b", lines),
+        total=_amount_after(r"(total due|amount due|grand total|total)\b(?!\s*(tax|vat))", lines),
+        lines=items,
+    )
+
+
+def extract_bank_rules(pages: list[Page]):
+    from .schemas import BankStatement, Transaction
+
+    lines = _lines(pages)
+    period = re.search(
+        r"period\s*:?\s*" + _DATE + r"\s*(?:to|-)\s*" + _DATE, "\n".join(lines), re.I
+    )
+    header, rows = _table_with_header(pages, ("date", "description"))
+    txs = []
+    if header:
+        di, de = _col(header, "date"), _col(header, "description")
+        am, bal = _col(header, "amount"), _col(header, "balance")
+        debit, credit = _col(header, "debit", "withdraw"), _col(header, "credit", "deposit")
+
+        def cell(r, i):
+            return r[i] if i is not None and i < len(r) else None
+
+        for r in rows:
+            if not cell(r, di) or not re.search(r"\d", cell(r, di)):
+                continue
+            if am is not None:
+                amount = normalize_number(cell(r, am))
+            else:
+                amount = (normalize_number(cell(r, credit)) or 0.0) - (
+                    normalize_number(cell(r, debit)) or 0.0
+                )
+            txs.append(
+                Transaction(
+                    date=cell(r, di), description=cell(r, de), amount=amount, balance=cell(r, bal)
+                )
+            )  # noqa: E501
+    last4 = _find(r"account(?: number| no\.?)?\s*:?\s*[*xX\d -]*(\d{4})\b", lines)
+    return BankStatement(
+        bank=next(iter(lines), None),
+        account_holder=_find(r"(?:account holder|customer|name)\s*:\s*(.+)", lines),
+        account_last4=last4,
+        period_start=period.group(1) if period else None,
+        period_end=period.group(2) if period else None,
+        currency=_currency(lines),
+        opening_balance=_amount_after(r"opening balance\b", lines),
+        closing_balance=_amount_after(r"closing balance\b", lines),
+        transactions=txs,
+    )
+
+
+def extract_document(schema_name: str, doc: Document, backend: Backend | None = None):
+    """One entry point. Statements and rule based types need no model."""
+    if schema_name in STATEMENTS:
+        return extract_statement(schema_name, doc)
+    pages = doc.pages[:4]
+    if backend is not None:
+        got = extract_with_model(schema_name, pages, backend)
+        if got is not None:
+            return got
+    if schema_name == "invoice":
+        return extract_invoice_rules(pages)
+    if schema_name == "bank_statement":
+        return extract_bank_rules(pages)
+    raise ValueError(f"no extractor for {schema_name}")

@@ -14,7 +14,7 @@ def make_pdf(path, pages):
         rows = spec.get("table", [])
         if rows:
             y += 20
-            cw, rh = 110, 22
+            cw, rh = 95, 22
             ncol = len(rows[0])
             for i, row in enumerate(rows):
                 for j, cell in enumerate(row):

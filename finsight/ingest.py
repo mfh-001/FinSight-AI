@@ -17,6 +17,8 @@ class Page:
     number: int  # 1-based
     text: str
     tables: list[list[list[str]]] = field(default_factory=list)
+    # same tables with empty cells kept, so columns line up with the header
+    raw_tables: list[list[list[str]]] = field(default_factory=list)
     scanned: bool = False
 
     @property
@@ -46,16 +48,20 @@ def clean_row(cells: list[str | None]) -> list[str]:
 
 def read_page(doc_name: str, page: pymupdf.Page, number: int) -> Page:
     tables: list[list[list[str]]] = []
+    raw_tables: list[list[list[str]]] = []
     bboxes = []
     try:
         for t in page.find_tables().tables:
             rows = [r for r in (clean_row(r) for r in t.extract()) if r]
             if rows:
                 tables.append(rows)
+                raw_tables.append(
+                    [[(c or "").replace("\n", " ").strip() for c in r] for r in t.extract()]
+                )
                 bboxes.append(pymupdf.Rect(t.bbox))
     except Exception:
         # table finder can fail on odd pages, plain text is still useful
-        tables, bboxes = [], []
+        tables, raw_tables, bboxes = [], [], []
 
     blocks = []
     for x0, y0, x1, y1, txt, _no, kind in page.get_text("blocks"):
@@ -69,7 +75,7 @@ def read_page(doc_name: str, page: pymupdf.Page, number: int) -> Page:
     text = "\n".join(b[2] for b in blocks)
 
     scanned = len(page.get_text().strip()) < 40 and bool(page.get_images())
-    return Page(doc_name, number, text, tables, scanned)
+    return Page(doc_name, number, text, tables, raw_tables, scanned)
 
 
 def ingest_pdf(path: str | Path, name: str | None = None, max_pages: int | None = None) -> Document:

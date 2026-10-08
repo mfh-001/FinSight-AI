@@ -89,3 +89,74 @@ def test_model_extraction_retries_once():
 def test_model_extraction_gives_up():
     b = MockBackend("nope")
     assert extract_with_model("invoice", [Page("i.pdf", 1, "x")], b) is None
+
+
+def test_invoice_rules(tmp_path):
+    from conftest import make_pdf
+
+    from finsight.extract import extract_document
+
+    pdf = make_pdf(
+        tmp_path / "inv.pdf",
+        [
+            {
+                "text": [
+                    "Northwind Supplies Ltd",
+                    "Invoice No: INV-2024-0042",
+                    "Date: 2024-03-05",
+                    "Due date: 2024-04-04",
+                    "Subtotal: $1,000.00",
+                    "Tax: $80.00",
+                    "Total due: $1,080.00",
+                ],
+                "table": [
+                    ["Description", "Qty", "Unit price", "Amount"],
+                    ["Steel bolts", "100", "4.00", "400.00"],
+                    ["Brackets", "20", "30.00", "600.00"],
+                ],
+            }
+        ],
+    )
+    inv = extract_document("invoice", ingest_pdf(pdf))
+    assert inv.vendor == "Northwind Supplies Ltd"
+    assert inv.invoice_number == "INV-2024-0042"
+    assert inv.invoice_date == "2024-03-05" and inv.due_date == "2024-04-04"
+    assert (inv.subtotal, inv.tax, inv.total) == (1000.0, 80.0, 1080.0)
+    assert inv.currency == "USD"
+    assert [(i.description, i.amount) for i in inv.lines] == [
+        ("Steel bolts", 400.0),
+        ("Brackets", 600.0),
+    ]
+
+
+def test_bank_statement_rules(tmp_path):
+    from conftest import make_pdf
+
+    from finsight.extract import extract_document
+
+    pdf = make_pdf(
+        tmp_path / "bank.pdf",
+        [
+            {
+                "text": [
+                    "First Example Bank",
+                    "Account holder: Jane Doe",
+                    "Account number: ****1234",
+                    "Statement period: 2024-01-01 to 2024-01-31",
+                    "Opening balance: $1,000.00",
+                    "Closing balance: $1,250.00",
+                ],
+                "table": [
+                    ["Date", "Description", "Debit", "Credit", "Balance"],
+                    ["2024-01-05", "Coffee shop", "5.00", "", "995.00"],
+                    ["2024-01-20", "Salary", "", "255.00", "1,250.00"],
+                ],
+            }
+        ],
+    )
+    b = extract_document("bank_statement", ingest_pdf(pdf))
+    assert b.account_holder == "Jane Doe" and b.account_last4 == "1234"
+    assert (b.period_start, b.period_end) == ("2024-01-01", "2024-01-31")
+    assert (b.opening_balance, b.closing_balance) == (1000.0, 1250.0)
+    assert [t.amount for t in b.transactions] == [-5.0, 255.0]
+    assert b.transactions[1].balance == 1250.0
