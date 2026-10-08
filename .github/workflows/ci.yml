@@ -19,3 +19,17 @@ jobs:
       - run: pip install -e ".[app,dev]"
       - run: ruff check finsight tests
       - run: pytest -q
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t finsight:ci .
+      - run: docker run --rm finsight:ci finsight --help
+      - name: ingest and ask on a sample pdf with the mock backend
+        run: |
+          docker run --rm -e FINSIGHT_HOME=/tmp/fs finsight:ci sh -c \
+            "finsight ingest samples/apple-10k-fy2023.pdf && finsight --backend mock ask 'What were total net sales?' --json" \
+            | tee out.txt
+          grep -q 'apple-10k-fy2023.pdf p\.' out.txt
+      - run: docker compose --profile cpu config -q
