@@ -37,6 +37,8 @@ class Store:
                             "number": p.number,
                             "text": p.text,
                             "tables": p.tables,
+                            "raw_tables": p.raw_tables,
+                            "raw": p.raw,
                             "scanned": p.scanned,
                         }
                         for p in doc.pages

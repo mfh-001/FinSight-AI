@@ -20,6 +20,8 @@ class Page:
     # same tables with empty cells kept, so columns line up with the header
     raw_tables: list[list[list[str]]] = field(default_factory=list)
     scanned: bool = False
+    # page text with the original line breaks, for rules that read label: value lines
+    raw: str = ""
 
     @property
     def content(self) -> str:
@@ -75,7 +77,7 @@ def read_page(doc_name: str, page: pymupdf.Page, number: int) -> Page:
     text = "\n".join(b[2] for b in blocks)
 
     scanned = len(page.get_text().strip()) < 40 and bool(page.get_images())
-    return Page(doc_name, number, text, tables, raw_tables, scanned)
+    return Page(doc_name, number, text, tables, raw_tables, scanned, page.get_text())
 
 
 def ingest_pdf(path: str | Path, name: str | None = None, max_pages: int | None = None) -> Document:

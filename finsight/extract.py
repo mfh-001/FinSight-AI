@@ -199,7 +199,7 @@ _CURRENCY = {
 def _lines(pages: list[Page]) -> list[str]:
     out = []
     for p in pages:
-        out += [ln.strip() for ln in p.text.splitlines() if ln.strip()]
+        out += [ln.strip() for ln in (p.raw or p.text).splitlines() if ln.strip()]
         out += [" | ".join(r) for t in p.tables for r in t]
     return out
 

@@ -19,12 +19,22 @@ from .ingest import render_page
 from .schemas import SCHEMAS
 
 UPLOAD_PAGE_LIMIT = 20
-ROOT = Path(__file__).resolve().parent.parent
+
+
+def _find(rel: str) -> Path:
+    """Repo folders sit next to the package in a checkout, or in the working dir in Docker."""
+    here = Path(__file__).resolve().parent.parent
+    for base in (Path(os.environ.get("FINSIGHT_ASSETS", ".")), Path.cwd(), here):
+        if (base / rel).exists():
+            return base / rel
+    return here / rel
+
+
 SAMPLES = {
-    "Apple 10-K FY2023 (public SEC filing)": ROOT / "samples" / "apple-10k-fy2023.pdf",
-    "Nathan's Famous 10-K FY2025 (public SEC filing)": ROOT / "samples" / "nathans-10k-fy2025.pdf",
+    "Apple 10-K FY2023 (public SEC filing)": _find("samples") / "apple-10k-fy2023.pdf",
+    "Nathan's Famous 10-K FY2025 (public SEC filing)": _find("samples") / "nathans-10k-fy2025.pdf",
 }
-RECORDED = ROOT / "legacy" / "recorded_run"
+RECORDED = _find("legacy/recorded_run")
 
 
 class Session:

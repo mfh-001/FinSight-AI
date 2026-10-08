@@ -33,3 +33,12 @@ def test_retention(tmp_path, sample_pdf):
     meta.write_text(json.dumps(raw))
     assert store.purge_expired() == 1
     assert os.listdir(tmp_path / "home" / "docs") == []
+
+
+def test_tables_and_raw_text_survive_the_round_trip(tmp_path, sample_pdf):
+    store = Store(Config(home=str(tmp_path / "home")))
+    fresh = store.add(sample_pdf)
+    loaded = store.load_all()[0]
+    for a, b in zip(fresh.pages, loaded.pages, strict=True):
+        assert (a.tables, a.raw_tables, a.raw) == (b.tables, b.raw_tables, b.raw)
+    assert loaded.page(2).raw_tables and "Total net sales" in loaded.page(2).raw
