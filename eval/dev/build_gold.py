@@ -9,7 +9,7 @@ from pathlib import Path
 
 from finsight.ingest import ingest_pdf
 
-SAMPLES = Path(__file__).parent.parent / "samples"
+SAMPLES = Path(__file__).parent.parent.parent / "samples"
 APPLE, NATH = "apple-10k-fy2023.pdf", "nathans-10k-fy2025.pdf"
 
 # id, doc, question, kind, value, unit, printed form searched for, text answer

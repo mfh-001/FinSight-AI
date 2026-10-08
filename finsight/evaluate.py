@@ -95,6 +95,10 @@ def summarize(rows: list[dict]) -> dict:
         "citation_hit_pct": pct([r["citation_hit"] for r in ans]),
         "retrieval_hit_pct": pct([r["retrieval_hit"] for r in ans]),
         "not_found_correct_pct": pct([r["correct"] for r in nf]),
+        "scanned_questions": sum(r.get("scanned", False) for r in ans),
+        "numeric_tolerance_pct_text_pages": pct(
+            [r["numeric"] for r in ans if not r.get("scanned", False)]
+        ),
         "median_seconds": round(statistics.median(r["seconds"] for r in rows), 2),
     }
 

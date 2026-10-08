@@ -1,0 +1,32 @@
+{"id": "h01", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What were Lindsay's total operating revenues in fiscal 2025?", "kind": "number", "pages": [41, 52, 67, 87, 88], "value": 676368, "unit": "thousands"}
+{"id": "h02", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What were Lindsay's operating revenues in fiscal 2024?", "kind": "number", "pages": [41, 52, 67, 87, 88], "value": 607074, "unit": "thousands"}
+{"id": "h03", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What was Lindsay's gross profit in fiscal 2025?", "kind": "number", "pages": [41, 52, 87], "value": 210780, "unit": "thousands"}
+{"id": "h04", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What was Lindsay's operating income in fiscal 2025?", "kind": "number", "pages": [41, 52, 87], "value": 88124, "unit": "thousands"}
+{"id": "h05", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What was Lindsay's net earnings in fiscal 2025?", "kind": "number", "pages": [41, 52, 53, 55, 56, 70], "value": 74052, "unit": "thousands"}
+{"id": "h06", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What was Lindsay's diluted earnings per share in fiscal 2025?", "kind": "number", "pages": [38, 43, 52, 70], "value": 6.78, "unit": "units"}
+{"id": "h07", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What were Lindsay's cash dividends declared per share in fiscal 2025?", "kind": "number", "pages": [44, 52, 55], "value": 1.45, "unit": "units"}
+{"id": "h08", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How much interest expense did Lindsay report in fiscal 2025?", "kind": "number", "pages": [52], "value": 1833, "unit": "thousands"}
+{"id": "h09", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How much interest income did Lindsay report in fiscal 2025?", "kind": "number", "pages": [52], "value": 7718, "unit": "thousands"}
+{"id": "h10", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What were Lindsay's total operating expenses in fiscal 2025?", "kind": "number", "pages": [41, 52], "value": 122656, "unit": "thousands"}
+{"id": "h11", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How much net cash did Lindsay provide from operating activities in fiscal 2025?", "kind": "number", "pages": [56], "value": 132910, "unit": "thousands"}
+{"id": "h12", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How much did Lindsay spend on purchases of property, plant and equipment in fiscal 2025?", "kind": "number", "pages": [56], "value": 42496, "unit": "thousands"}
+{"id": "h13", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How much did Lindsay pay in dividends in fiscal 2025?", "kind": "number", "pages": [55, 56], "value": 15748, "unit": "thousands"}
+{"id": "h14", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How much did Lindsay spend repurchasing common shares in fiscal 2025?", "kind": "number", "pages": [55, 56], "value": 11532, "unit": "thousands"}
+{"id": "h15", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What were the Irrigation segment operating revenues in fiscal 2025?", "kind": "number", "pages": [41, 67, 87], "value": 568000, "unit": "thousands"}
+{"id": "h16", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What were the Infrastructure segment operating revenues in fiscal 2025?", "kind": "number", "pages": [41, 67, 87], "value": 108368, "unit": "thousands"}
+{"id": "h17", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How many shares of Lindsay common stock were outstanding as of October 21, 2025?", "kind": "number", "pages": [3], "value": 10804220, "unit": "units"}
+{"id": "h18", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What was the aggregate market value of Lindsay stock held by non-affiliates?", "kind": "number", "pages": [3], "value": 1435554352, "unit": "units"}
+{"id": "h19", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "On which stock exchange does Lindsay's common stock trade?", "kind": "text", "pages": [1, 3, 35], "answer": "New York Stock Exchange"}
+{"id": "h20", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "Who is Lindsay's President and Chief Executive Officer?", "kind": "text", "pages": [18, 104, 106, 107], "answer": "Randy A. Wood"}
+{"id": "h21", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "Where is Lindsay's global headquarters?", "kind": "text", "pages": [57], "answer": "Omaha"}
+{"id": "h22", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "Approximately how many stockholders of record did Lindsay have as of October 21, 2025?", "kind": "number", "pages": [35], "value": 125, "unit": "units"}
+{"id": "h23", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What is the aggregate principal amount of Lindsay's unsecured Senior Notes?", "kind": "number", "pages": [44, 75], "value": 115.0, "unit": "millions"}
+{"id": "h24", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What fixed annual interest rate do Lindsay's Senior Notes pay?", "kind": "number", "pages": [44, 75], "value": 3.82, "unit": "units"}
+{"id": "h25", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "When is the principal of Lindsay's Senior Notes due?", "kind": "text", "pages": [44, 75], "answer": "February 19, 2030"}
+{"id": "h26", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How much cash and cash equivalents did Lindsay have at August 31, 2025?", "kind": "number", "pages": [54], "value": 250575, "unit": "thousands", "scanned": true}
+{"id": "h27", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What were Lindsay's total assets at August 31, 2025?", "kind": "number", "pages": [54], "value": 840836, "unit": "thousands", "scanned": true}
+{"id": "h28", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What were Lindsay's total liabilities at August 31, 2025?", "kind": "number", "pages": [54], "value": 307986, "unit": "thousands", "scanned": true}
+{"id": "h90", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What were Lindsay's revenues in Saudi Arabia?", "kind": "notfound", "pages": []}
+{"id": "h91", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How many bitcoin does Lindsay hold?", "kind": "notfound", "pages": []}
+{"id": "h92", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "How many Lindsay employees work in Japan?", "kind": "notfound", "pages": []}
+{"id": "h93", "doc": "lindsay-10k-fy2025-sim-scan.pdf", "question": "What is the value of Lindsay's supply contract with Caterpillar?", "kind": "notfound", "pages": []}

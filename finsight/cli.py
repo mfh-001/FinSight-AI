@@ -156,8 +156,8 @@ def main(argv: list[str] | None = None) -> int:
     p.set_defaults(fn=cmd_delete)
 
     p = sub.add_parser("eval", help="run the question set and print accuracy")
-    p.add_argument("--set", default="eval/questions.jsonl")
-    p.add_argument("--docs", default="samples")
+    p.add_argument("--set", default="eval/heldout/questions.jsonl")
+    p.add_argument("--docs", default="eval/heldout/docs")
     p.add_argument("--out", help="write the results table as markdown")
     p.set_defaults(fn=cmd_eval)
 

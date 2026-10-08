@@ -73,3 +73,11 @@ def test_summary_percentages():
     s = summarize(rows)
     assert s["answerable"] == 2 and s["numeric_tolerance_pct"] == 50.0
     assert s["not_found_correct_pct"] == 100.0 and s["median_seconds"] == 2.0
+
+
+def test_summary_reports_text_pages_separately():
+    scanned = {**score(Q, mk("nothing", False)), "scanned": True, "seconds": 1.0}
+    ok = {**score(Q, mk("383,285")), "seconds": 1.0}
+    s = summarize([ok, scanned])
+    assert s["scanned_questions"] == 1
+    assert s["numeric_tolerance_pct"] == 50.0 and s["numeric_tolerance_pct_text_pages"] == 100.0
