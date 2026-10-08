@@ -40,7 +40,9 @@ Run it yourself: `finsight --backend none eval`.
 | Config | Exact match | Numeric tolerance | Citation hit | Not-in-doc correct | Median s/question | Hardware | Date |
 |---|---|---|---|---|---|---|---|
 | Retrieval only (BM25, no model) | 38.1% | 47.6% | 52.4% | 57.1% | 0.01 | Apple M1, 8 GB, CPU | 2026-10-08 |
-MODEL_ROWS
+| Qwen2.5-1.5B-Instruct on CPU, text only | not measured yet (about 200 to 340 s per question, see below) | | | | | Apple M1, 8 GB, CPU | |
+| Qwen2.5-VL-3B or 7B (AWQ) via vLLM, with page images | not measured yet | | | | | needs a GPU | |
+| Qwen2-VL-7B 4-bit (original baseline) with ColPali v1.2 | not measured yet | | | | | needs a GPU | |
 
 Other numbers from the same run: the right page was in the top 4 results for 95.2% of answerable questions.
 
