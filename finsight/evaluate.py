@@ -63,6 +63,7 @@ def score(q: dict, ans: Answer) -> dict:
         "found": ans.found,
         "seconds": ans.seconds,
         "mode": ans.mode,
+        "scanned": bool(q.get("scanned")),
     }
     retrieved = {h.key for h in ans.retrieved}
     if kind == "notfound":
