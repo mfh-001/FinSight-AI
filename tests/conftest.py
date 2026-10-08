@@ -3,7 +3,7 @@ import pytest
 
 
 def make_pdf(path, pages):
-    """pages: list of dicts with 'text' lines and optional 'table' rows (drawn with ruling lines)."""
+    """pages: dicts with 'text' lines and optional 'table' rows drawn with ruling lines."""
     doc = pymupdf.open()
     for spec in pages:
         page = doc.new_page()
