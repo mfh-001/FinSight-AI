@@ -14,7 +14,7 @@
     "label": "none",
     "backend": "none",
     "model": "",
-    "hardware": "Darwin arm64 (arm), Apple GPU (MPS) available",
+    "hardware": "Apple M1, 8 GB, CPU only (no model)",
     "date": "2026-10-08",
     "total_seconds": 2.1
   },

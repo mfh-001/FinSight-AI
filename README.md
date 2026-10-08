@@ -33,26 +33,39 @@ The first version said revenue was growing. That output is kept in `legacy/` and
 
 ## Results
 
-49 questions on two public SEC filings (Apple FY2023 10-K, Nathan's Famous FY2025 10-K): 42 have an answer in the document and 7 do not.
-Answers were checked by hand against the filings. Questions, answers and gold pages are in `eval/questions.jsonl`.
-Run it yourself: `finsight --backend none eval`.
+### Held-out set (main result)
+
+32 questions on a filing that was not used while building: the Lindsay Corporation FY2025 10-K (farm irrigation and road safety equipment).
+28 questions have an answer in the document and 4 do not. 3 of the 28 are about a balance sheet page that I turned into a picture
+(a simulated scan with no text), so a text-only path cannot answer them. Answers were checked by hand against the filing.
+The questions were written before the system was run on them, the answer logic was frozen at the git tag `heldout-freeze`, and the set was run once.
+Details are in [eval/README.md](eval/README.md). Run it yourself: `finsight --backend none eval`.
+
+<!-- results:start -->
+| Config | Exact match | Numeric tolerance | Numeric, text pages only | Citation hit | Not-in-doc correct | Median s/question | Hardware | Date |
+|---|---|---|---|---|---|---|---|---|
+| Retrieval only (BM25, no model) | 57.1% | 60.7% | 68.0% | 67.9% | 75.0% | 0.01 | Apple M1, 8 GB, CPU only (no model) | 2026-10-08 |
+| Qwen2.5-VL-3B, page images | not measured yet | | | | | | | |
+| Qwen2.5-VL-7B AWQ via vLLM, page images | not measured yet | | | | | | | |
+| Qwen2-VL-7B 4-bit (original baseline), BM25 pages | not measured yet | | | | | | | |
+| Qwen2-VL-7B 4-bit (original baseline), ColPali v1.2 + BM25 | not measured yet | | | | | | | |
+<!-- results:end -->
+
+- "Exact match": the gold value appears as printed. "Numeric tolerance": any number in the answer is within 0.5% of the gold value in any unit (for example $1.4 billion for 1,435,554,352). "Citation hit": a cited page contains the answer.
+- Retrieval only returns the best matching sentences. It is a baseline, not the product. On the 3 scanned-page questions it printed lines from other pages instead of saying it could not read the page, which is a failure mode to fix.
+- The model rows are **not measured yet**. This machine has no CUDA GPU and models are too slow on its CPU. [notebooks/kaggle_eval.ipynb](notebooks/kaggle_eval.ipynb) runs all four configs on a free Kaggle T4 and writes the json that `scripts/results_to_table.py` turns into this table.
+- Small set, one filing, one run. Treat the numbers as a first honest data point, not a benchmark.
+
+### Dev set (tuned on)
+
+49 questions on the Apple FY2023 and Nathan's Famous FY2025 10-Ks. I tuned the answer logic while looking at these, so the numbers are optimistic.
 
 | Config | Exact match | Numeric tolerance | Citation hit | Not-in-doc correct | Median s/question | Hardware | Date |
 |---|---|---|---|---|---|---|---|
-| Retrieval only (BM25, no model) | 38.1% | 47.6% | 52.4% | 57.1% | 0.01 | Apple M1, 8 GB, CPU | 2026-10-08 |
-| Qwen2.5-1.5B-Instruct on CPU, text only | not measured yet (about 200 to 340 s per question, see below) | | | | | Apple M1, 8 GB, CPU | |
-| Qwen2.5-VL-3B or 7B (AWQ) via vLLM, with page images | not measured yet | | | | | needs a GPU | |
-| Qwen2-VL-7B 4-bit (original baseline) with ColPali v1.2 | not measured yet | | | | | needs a GPU | |
+| Retrieval only (BM25, no model) | 38.1% | 47.6% | 52.4% | 57.1% | 0.01 | Apple M1, 8 GB, CPU only (no model) | 2026-10-08 |
 
-Other numbers from the same run: the right page was in the top 4 results for 95.2% of answerable questions.
-
-How to read this:
-
-- "Exact match" means the gold value appears as printed. "Numeric tolerance" accepts the same number in other units (for example $383.3 billion for 383,285 million) within 0.5%. "Citation hit" means a cited page contains the answer.
-- Retrieval only returns the best matching sentences. It is a baseline, not the product. It often finds the right page and prints the wrong line.
-- I wrote parts of the answer logic while looking at these questions, so treat the numbers as optimistic. There is no held-out set yet.
-- Not measured yet: Qwen2.5-VL-3B and 7B, Qwen2-VL-7B (the original baseline) and ColPali retrieval. This machine has no CUDA GPU. The code paths exist and the same `finsight eval` command measures them on a GPU box.
-- Spot check, not a benchmark: Qwen2.5-1.5B-Instruct on the same M1 CPU (bf16) answered "What were Apple's total net sales in fiscal 2023?" with $383.3 billion in 336 s, and correctly said "not found" for a bitcoin question in 198 s. Too slow for CPU use. A GPU or an Ollama or vLLM server is the intended route for written answers.
+Spot check, not a benchmark: Qwen2.5-1.5B-Instruct on the same M1 CPU (bf16) answered "What were Apple's total net sales in fiscal 2023?" with $383.3 billion in 336 s,
+and said "not found" for a bitcoin question in 198 s. Too slow for CPU use. A GPU, or an Ollama or vLLM server, is the intended route for written answers.
 
 ## How it works
 
